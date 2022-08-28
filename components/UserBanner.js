@@ -13,10 +13,9 @@ const UserBanner = ({ nightMode }) => {
 					nightMode ? "animate-softlights" : ""
 				} dark:[text-shadow:0px_0px_2px_white]`}
 			>
-				<h1 className="lg:text-4xl xsm:text-2xl text-1xl">Michele Moro</h1>
+				<h1 className="lg:text-4xl xsm:text-2xl text-2xl">Michele Moro</h1>
 				<h1 className="lg:text-4xl sm:text-2xl text-1xl">ミケレ・モロ</h1>
-				<h2 className="lg:text-2xl sm:text-base text-bae">
-					{" "}
+				<h2 className="lg:text-2xl sm:text-base text-base">
 					Junior frontend developer
 				</h2>
 			</div>

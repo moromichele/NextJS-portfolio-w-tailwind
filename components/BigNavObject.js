@@ -18,7 +18,7 @@ const BigNavObject = ({ title,light,dark,isDark, to}) => {
 					to={to}
 					spy={true}
 					smooth={true}
-					offset={-100}
+					offset={0}
 					duration={500}
 				>
 					<div className="flex flex-col items-end h-full">

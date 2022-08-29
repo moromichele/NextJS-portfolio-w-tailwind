@@ -2,8 +2,8 @@ import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
 const StationNavigator = ({ isDark, light, dark }) => {
 	return (
-		<div className="flex items-center align-center w-100 h-[80px] bg-slate-800 dark:bg-slate-900 text-white">
-			<AiOutlineArrowUp className="text-white sm:text-[55px] text-[55px]" />
+		<div className="flex gap-2 items-center align-center w-100 h-[80px] bg-slate-800 dark:bg-slate-900 text-white">
+			<AiOutlineArrowUp className="text-white sm:text-[75px] text-[75px]" />
 			<div className="bg-white rounded-lg flex items-center justify-center text-center p-1">
 				<div
 					style={{ borderColor: isDark ? "red" : "red" }}
@@ -12,8 +12,8 @@ const StationNavigator = ({ isDark, light, dark }) => {
 					M
 				</div>
 			</div>
-			<p className="text-[40px]"><strong>Mamma mia</strong></p>
-			<AiOutlineArrowDown className="text-white sm:text-[55px] text-[55px]" />
+			<p className="md:text-[40px] sm:block hidden"><strong>Mamma mia</strong></p>
+			<AiOutlineArrowDown className="text-white sm:text-[75px] text-[75px]" />
 			<div className="bg-white rounded-lg flex items-center justify-center text-center p-1">
 				<div
 					style={{ borderColor: isDark ? "green" : "green" }}
@@ -22,7 +22,8 @@ const StationNavigator = ({ isDark, light, dark }) => {
 					S
 				</div>
 			</div>
-			<p className="text-[40px]"> <strong>Spaghetti</strong></p>
+			
+			<p className="md:text-[40px] sm:block hidden"> <strong>Spaghetti</strong></p>
 		</div>
 	);
 };

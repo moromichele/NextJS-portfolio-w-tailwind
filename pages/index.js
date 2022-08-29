@@ -8,6 +8,7 @@ import UserBanner from "../components/UserBanner.js";
 import { motion, useScroll } from "framer-motion";
 import StationHeader from "../components/StationHeader.js";
 import StationNavigator from "../components/StationNavigator.js";
+import { CgDarkMode } from "react-icons/cg";
 
 const lorem = () => {
 	return "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
@@ -45,6 +46,16 @@ export default function Home() {
 	const scroll2 = useScroll({ target: ref2, offset: ["start end", "end end"] });
 	const scroll3 = useScroll({ target: ref3, offset: ["start end", "end end"] });
 
+	useEffect(() => {
+		//defaults to dark/light mode from device
+		window
+			.matchMedia("(prefers-color-scheme: dark)")
+			.addEventListener("change", (event) => {
+				const colorScheme = event.matches ? true : false; //true: its dark mode
+				setToggleNightMode(colorScheme);
+			});
+	}, []);
+
 	return (
 		<div className={toggleNightMode ? "dark" : ""}>
 			<div className="flex flex-col items-center break-words bg-slate-100 dark:bg-slate-900">
@@ -58,26 +69,45 @@ export default function Home() {
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 
-				<header className="sticky top-0 flex justify-end p-5 w-full h-[60px] bg-slate-200 dark:bg-slate-700 z-[2]">
+				<header className="sticky top-0 flex items-center justify-end p-5 w-full h-[60px] bg-slate-200 dark:bg-slate-700 z-[2]">
 					<motion.div
 						style={{ scaleX: scroll1.scrollYProgress }}
-						className="fixed top-[25px] left-0 h-[10px] w-1/3 bg-yellow-600 origin-[0%] right-0 z-[5]"
+						className="fixed top-[20px] left-[2%] h-[20px] w-1/4 bg-yellow-500 origin-[0%] z-[5]"
 					/>
 					<motion.div
 						style={{ scaleX: scroll2.scrollYProgress }}
-						className="fixed top-[25px] left-1/3 h-[10px] w-1/3 bg-green-600 origin-[0%] right-0 z-[5]"
+						className="fixed top-[20px] left-[27%] h-[20px] w-1/4 bg-green-600 origin-[0%] right-0 z-[5]"
 					/>
 					<motion.div
 						style={{ scaleX: scroll3.scrollYProgress }}
-						className="fixed top-[25px] left-2/3 h-[10px]  w-1/3 bg-fuchsia-600 origin-[0%] right-0 z-[5]"
+						className="fixed top-[20px] left-[52%] h-[20px]  w-1/4 bg-fuchsia-600 origin-[0%] right-0 z-[5]"
 					/>
+					<p
+						
+						className="fixed left-[25%] top-[19px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-2 border-black text-center box-content text-black z-[6]"
+					>
+						E
+					</p>
+					<p
+						
+						className="fixed left-[50%] top-[19px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-2 border-black text-center box-content text-black z-[6]"
+					>
+						P
+					</p>
+					<p
+						
+						className="fixed left-[75%] top-[19px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-2 border-black text-center box-content text-black z-[6]"
+					>
+						A
+					</p>
+					<div className="fixed bg-slate-900 dark:bg-slate-100 h-[20px] w-[90%] top-[20px] left-[2%] z-[3]" />
 					<button
-						className="bg-slate-100 border-4 border-red-600 text-red-500 dark:text-red-600 font-bold p-2 rounded"
+						className="bg-slate-50 dark:bg-slate-900 text-black dark:text-white rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] hover:scale-105 z-[4]"
 						onClick={() => {
 							setToggleNightMode((s) => !s);
 						}}
 					>
-						{toggleNightMode ? "Light" : "Night"} mode
+						<CgDarkMode className="text-[35px]" />
 					</button>
 				</header>
 
@@ -127,102 +157,91 @@ export default function Home() {
 
 					<div
 						id="edu_exp"
-						className="xl:w-[1280px] m-[0_auto] text-black dark:text-white min-h-[90vh] bg-slate-50 dark:bg-slate-700"
-						ref={ref1}
+						className="xl:w-[1280px] m-[0_auto] text-black dark:text-white bg-slate-50 dark:bg-slate-700"
 					>
 						<StationNavigator />
-						<StationHeader
-							title="Education and work experience"
-							light={colors.amber[400]}
-							dark={colors.amber[500]}
-							isDark={toggleNightMode}
-						/>
-						<div className="grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[180vh]">
-							<section className="">
-								<h2 className="text-7xl">Education</h2>
-								<p className="text-5xl">
-									Bachelor&apos;s degree in computer engineering at the
-									University of Siena, Italy
-									<br />
-									Graduated in July 2021
-								</p>
-								<Image
-									src="/computer_kurayami_man.webp"
-									alt="man at a computer at night"
-									width="100"
-									height="100"
-									className="float-right"
-								/>
-							</section>
-							<section className="">
-								<h2 className="text-7xl">Work experience</h2>
-								<p className="text-5xl">
-									Junior full stack developer from october 2021 to july 2022
-								</p>
-								<Image
-									src="/computer_kurayami_man.webp"
-									alt="man at a computer at night"
-									width="100"
-									height="100"
-								/>
-							</section>
+						<div ref={ref1} className="min-h-[90vh]">
+							<StationHeader
+								title="Education and work experience"
+								light={colors.amber[400]}
+								dark={colors.amber[500]}
+								isDark={toggleNightMode}
+							/>
+							<div className="grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh]">
+								<section className="">
+									<h2 className="text-7xl">Education</h2>
+									<p className="text-5xl">
+										Bachelor&apos;s degree in computer engineering at the
+										University of Siena, Italy
+										<br />
+										Graduated in July 2021
+									</p>
+									<Image
+										src="/computer_kurayami_man.webp"
+										alt="man at a computer at night"
+										width="100"
+										height="100"
+										className="float-right"
+									/>
+								</section>
+								<section className="">
+									<h2 className="text-7xl">Work experience</h2>
+									<p className="text-5xl">
+										Junior full stack developer from october 2021 to july 2022
+									</p>
+									<Image
+										src="/computer_kurayami_man.webp"
+										alt="man at a computer at night"
+										width="100"
+										height="100"
+									/>
+								</section>
+							</div>
 						</div>
 					</div>
 
 					<div
 						id="projects"
-						className="xl:w-[1280px] m-[0_auto]  min-h-[90vh] bg-slate-50 dark:bg-slate-700"
-						ref={ref2}
+						className="xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700"
 					>
 						<StationNavigator />
-						<StationHeader
-							title="Projects"
-							light={colors.green[500]}
-							dark={colors.green[600]}
-							isDark={toggleNightMode}
-						/>
-						<div>
-							<h1
-								className={`${
-									toggleNightMode ? "animate-softlights" : ""
-								}  md:text-9xl text-6xl leading-tight subpixel-antialiased dark:[text-shadow:0px_0px_2px_white]`}
-							>
-								Projects
-							</h1>
-							<p className="text-lg">
-								These are some projects I&apos;ve worked on to practice some
-								technologies new and old insomma, they are not serious
-								production ready projects, more like practice to show that am
-								not making it all up lul
-							</p>
-							<div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:items-stretch items-center justify-items-center">
-								<Project prObject={projectRainApp} oneD />
-								<Project prObject={projectMemoryGame} oneD />
-								<Project prObject={projectPortfolio} />
+						<div ref={ref2} className="min-h-[90vh]">
+							<StationHeader
+								title="Projects"
+								light={colors.green[500]}
+								dark={colors.green[600]}
+								isDark={toggleNightMode}
+							/>
+							<div className="p-4">
+								<p className="text-lg">
+									These are some projects I&apos;ve worked on to practice some
+									technologies new and old insomma, they are not serious
+									production ready projects, more like practice to show that am
+									not making it all up lul
+								</p>
+								<div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:items-stretch items-center justify-items-center">
+									<Project prObject={projectRainApp} oneD />
+									<Project prObject={projectMemoryGame} oneD />
+									<Project prObject={projectPortfolio} />
+								</div>
 							</div>
 						</div>
 					</div>
 					<div
 						id="infos"
-						className="xl:w-[1280px] m-[0_auto]  min-h-[90vh] bg-slate-50 dark:bg-slate-700"
-						ref={ref3}
+						className="xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700"
 					>
 						<StationNavigator />
-						<StationHeader
-							title="About me"
-							light={colors.fuchsia[500]}
-							dark={colors.fuchsia[600]}
-							isDark={toggleNightMode}
-						/>
-						<div>
-							<h1
-								className={`${
-									toggleNightMode ? "animate-softlights" : ""
-								}  md:text-8xl text-4xl leading-tightsubpixel-antialiased dark:[text-shadow:0px_0px_2px_white]`}
-							>
-								About me
-							</h1>
-							<p className="text-lg">{lorem()}</p>
+						<div ref={ref3} className="min-h-[80vh]">
+							<StationHeader
+								title="About me"
+								light={colors.fuchsia[500]}
+								dark={colors.fuchsia[600]}
+								isDark={toggleNightMode}
+							/>
+							<div className="p-4">
+								<p className="text-lg">{lorem()}</p>
+							</div>
 						</div>
 					</div>
 				</main>

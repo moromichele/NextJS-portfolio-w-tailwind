@@ -8,6 +8,7 @@ module.exports = {
 			animation: {
 				lights: "lights 2.5s",
 				softlights: "softlights 2.2s",
+				scrollText: "scrollText 13s linear infinite"
 			},
 			screens: {
 				xsm: "380px",
@@ -19,12 +20,12 @@ module.exports = {
 					},
 					"11%,50%": {
 						opacity: "0.7",
-						"text-shadow": "0px 0px 5px #FFFFFF",
+						"text-shadow": "0px 0px 4px #FFFFFF",
 					},
 
 					"20%,36%": {
 						opacity: "0.5",
-						"text-shadow": "0px 0px 4px #FFFFFF",
+						"text-shadow": "0px 0px 3px #FFFFFF",
 					},
 					"12%, 18%, 35%, 52%": {
 						opacity: "0.1",
@@ -35,7 +36,7 @@ module.exports = {
 						"text-shadow": "0px 0px 4px #FFFFFF",
 					},
 					"100%": {
-						"text-shadow": "0px 0px 7px #FFFFFF",
+						"text-shadow": "0px 0px 5px #FFFFFF",
 						opacity: "1",
 					},
 				},
@@ -65,6 +66,14 @@ module.exports = {
 						opacity: "1",
 					},
 				},
+				scrollText: {
+					"0%":{
+						transform: "translateX(100%)"
+					},
+					"100%": {
+						transform: "translateX(-300%)"
+					}
+				}
 			},
 		},
 	},

@@ -5,10 +5,13 @@ module.exports = {
 	content: ["./pages/**/*.js", "./components/**/*.js"],
 	theme: {
 		extend: {
+			fontFamily: {
+				istok: ["Istok Web", "sans-serif"],
+			},
 			animation: {
 				lights: "lights 2.5s",
 				softlights: "softlights 2.2s",
-				scrollText: "scrollText 13s linear infinite"
+				scrollText: "scrollText 13s linear infinite",
 			},
 			screens: {
 				xsm: "380px",
@@ -67,13 +70,13 @@ module.exports = {
 					},
 				},
 				scrollText: {
-					"0%":{
-						transform: "translateX(100%)"
+					"0%": {
+						transform: "translateX(100%)",
 					},
 					"100%": {
-						transform: "translateX(-300%)"
-					}
-				}
+						transform: "translateX(-300%)",
+					},
+				},
 			},
 		},
 	},

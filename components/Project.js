@@ -65,7 +65,7 @@ const Project = ({ prObject }) => {
 					return (
 						<span
 							key={index}
-							className="inline-block bg-slate-300 dark:bg-neutral-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-green-300 mr-2 mb-2"
+							className="inline-block bg-slate-300 dark:bg-neutral-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-green-100 mr-2 mb-2"
 						>
 							#{tag}
 						</span>

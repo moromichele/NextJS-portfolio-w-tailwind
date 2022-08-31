@@ -7,10 +7,10 @@ const BigNavObject = ({ station, isDark }) => {
 	const bgColorReal = isDark ? dark : light;
 
 	return (
-		<li>
+		<li className="">
 			<div
 				style={{ backgroundColor: bgColorReal }}
-				className=" transition-transform cursor-pointer h-full text-center text-neutral-100 dark:text-white text-4xl p-2 hover:scale-105 hover:shadow-[3px_3px_0px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
+				className="w-full h-full transition-transform cursor-pointer text-center text-neutral-100 dark:text-white text-4xl p-2 hover:scale-105 hover:shadow-[3px_3px_0px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
 			>
 				<Link
 					activeClass="active"
@@ -19,6 +19,7 @@ const BigNavObject = ({ station, isDark }) => {
 					smooth={true}
 					offset={0}
 					duration={500}
+					delay={1}
 				>
 					<div className="flex flex-col items-end h-full">
 						<div className="md:h-[240px] h-[30vh]"></div>
@@ -31,7 +32,7 @@ const BigNavObject = ({ station, isDark }) => {
 								{title[0].toUpperCase()}
 							</div>
 						</div>
-						<p className="xsm:text-2xl text-base">{title}</p>
+						<p className="font-istok xsm:text-2xl text-base">{title}</p>
 					</div>
 				</Link>
 			</div>

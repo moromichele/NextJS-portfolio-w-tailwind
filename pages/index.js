@@ -11,8 +11,13 @@ import StationNavigator from "../components/StationNavigator.js";
 import { CgDarkMode } from "react-icons/cg";
 import { Link } from "react-scroll";
 import { MdSchool, MdOutlineMail, MdWork } from "react-icons/md";
-import { RiLinkedinBoxLine } from "react-icons/ri";
+import { RiLinkedinBoxLine, RiLinkedinFill } from "react-icons/ri";
 import { FiGithub } from "react-icons/fi";
+import { SiTokyometro } from "react-icons/si";
+
+const linkedinProfile = "https://www.linkedin.com/in/michele-moro-07a81a21b/";
+const githubProfile = "https://github.com/moromichele";
+const myEmail = "moro.michele1997@gmail.com";
 
 const lorem = () => {
 	return "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
@@ -81,6 +86,7 @@ export default function Home() {
 	const ref2 = useRef(null);
 	const ref3 = useRef(null);
 
+	const refArr = [ref1, ref2, ref3];
 	const scroll1 = useScroll({
 		target: ref1,
 		offset: ["start center", "start"],
@@ -210,7 +216,7 @@ export default function Home() {
 					</Link>
 					<div className="fixed bg-slate-900 dark:bg-slate-200 h-[16px] xl:w-[96%] md:w-[94%] w-[90%] top-[22px] left-[2%] z-[3]" />
 					<button
-						className="bg-slate-50 dark:bg-slate-900 text-black dark:text-white rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] hover:scale-105 z-[4]"
+						className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] hover:scale-105 z-[4]"
 						onClick={() => {
 							setToggleNightMode((s) => !s);
 						}}
@@ -219,8 +225,8 @@ export default function Home() {
 					</button>
 				</header>
 
-				<main className="max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
-					<div className="xl:w-[1280px] m-[0_auto] text-black dark:text-white min-h-[90vh] bg-slate-50 dark:bg-slate-700">
+				<main className="rounded-b-xl max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
+					<div className="xl:w-[1280px] m-[0_auto] min-h-[90vh] bg-slate-50 dark:bg-slate-700">
 						<div className="grid md:grid-cols-2 grid-cols-1 max-w-fll md:min-h-[90vh] min-h-[180vh]">
 							<div className="h-full flex flex-col">
 								<UserBanner nightMode={toggleNightMode} />
@@ -236,7 +242,7 @@ export default function Home() {
 									</ul>
 								</nav>
 							</div>
-							<div className="dark:animate-lights  flex items-center justify-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight subpixel-antialiased dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+							<div className="font-istok dark:animate-lights  flex items-center justify-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight subpixel-antialiased dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
 								Benvenuti
 								<br />
 								Welcome
@@ -259,7 +265,7 @@ export default function Home() {
 								station={experienceStation}
 								isDark={toggleNightMode}
 							/>
-							<div className="grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh] p-5">
+							<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh] p-5">
 								<section className="">
 									<MdSchool
 										size={150}
@@ -280,7 +286,7 @@ export default function Home() {
 											<div className="flex justify-between mb-2">
 												<div>
 													<div className="text-2xl font-bold">
-														Bachelor's degree
+														Bachelor&apos;s degree
 													</div>
 													<div className="text-xl">Università di Siena</div>
 												</div>
@@ -345,7 +351,7 @@ export default function Home() {
 											UI, Spring Boot and PostgreSQL
 										</p>
 										<p className="text-2xl mt-5 font-thin pr-[5%] text-left">
-											Mainteined and completely restyled the company's main
+											Mainteined and completely restyled the company&apos;s main
 											legacy web app <br />
 											(GWT, XML, CSS)
 										</p>
@@ -381,15 +387,15 @@ export default function Home() {
 					<div
 						ref={ref3}
 						id={aboutStation.to}
-						className="xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700"
+						className="rounded-b-xl xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700 "
 					>
 						<StationNavigator
 							up={[stationsArray[0]]}
 							isDark={toggleNightMode}
 						/>
-						<div className="">
+						<div className="rounded-b-xl">
 							<StationHeader station={aboutStation} isDark={toggleNightMode} />
-							<div className="relative grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] p-3 bg-slate-100 dark:bg-slate-700">
+							<div className="rounded-b-xl py-10 relative grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] p-3 bg-slate-100 dark:bg-slate-700">
 								<section className="text-center rounded shadow-xl p-6 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-300 z-[1]">
 									<div className="relative float float-left rounded-full border-slate-900 overflow-hidden w-[170px] h-[170px] bg-slate-50 dark:bg-slate-200 shadow-[0px_0px_1px_2px_gray] dark:shadow-[0px_0px_1px_2px_black]">
 										<Image
@@ -399,12 +405,13 @@ export default function Home() {
 											className="object-cover lg:object-scale-cover scale-125 translate-y-[10px]"
 										/>
 									</div>
-									<p className="text-1xl text-right">
-										<strong>Hi I'm Michele Moro</strong>, I grew up in a small
-										town in the italian region of Tuscany, the one with the good
-										looking hills and cypress trees. I've always been interested
-										in technology, at 14 years old I built my first computer and
-										started learning to program in C++ from youtube tutorials.
+									<p className="font-istok text-1xl text-right">
+										<strong>Hi I&apos;m Michele Moro</strong>, I grew up in a
+										small town in the italian region of Tuscany, the one with
+										the good looking hills and cypress trees. I&apos;ve always
+										been interested in technology, at 14 years old I built my
+										first computer and started learning to program in C++ from
+										youtube tutorials.
 										<br />
 										<br />
 										<strong>Outside programming</strong>, I have a big passion
@@ -416,9 +423,9 @@ export default function Home() {
 										things.
 										<br />
 										<br />
-										<strong>What's next?</strong>
+										<strong>What&apos;s next?</strong>
 										<br />
-										I've decided to quit my job here in Italy and to move
+										I&apos;ve decided to quit my job here in Italy and to move
 										outside of the italian countryside. I would like to focus my
 										career on the frontend side of web programming, as I found
 										it to be the most interesting for me at my last job.
@@ -431,9 +438,9 @@ export default function Home() {
 											? aboutStation.dark
 											: aboutStation.light,
 									}}
-									className="top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 absolute w-[80%] md:h-[70%] h-[80%] rounded shadow-lg"
+									className="top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 absolute w-[80%] md:h-[70%] h-[90%] rounded shadow-lg"
 								>
-									<div className="grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
+									<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
 										<div>
 											The cake is a lie. Fun fact: the town I grew up in has
 											around 40 people and no stores of any kind.
@@ -443,22 +450,42 @@ export default function Home() {
 												Contacts
 											</h1>
 											<nav>
-												<ul className="sm:text-2xl text-[18px] md:space-y-10 sm:space-y-4 space-y-10 word-break-all font-bold">
-													<li className="flex sm:flex-row flex-col gap-2 items-center">
-														<MdOutlineMail size={50} />
-														<address className="not-italic">
-															moro.michele1997@gmail.com
-														</address>
+												<ul className="sm:text-2xl text-[18px] md:space-y-10 sm:space-y-4 space-y-10 font-bold break-all">
+													<li className="flex sm:flex-row flex-col gap-2 items-center ">
+														<a
+															target="_blank"
+															rel="noopener noreferrer"
+															href={`mailto:${myEmail}`}
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+														>
+															<MdOutlineMail size={50} />
+															<address className="not-italic ">
+																moro.michele1997@gmail.com
+															</address>
+														</a>
 													</li>
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
-														<RiLinkedinBoxLine size={50} />
-														<p className="">Linkedin profile</p>
+														<a
+															target="_blank"
+															rel="noopener noreferrer"
+															href={linkedinProfile}
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+														>
+															<RiLinkedinBoxLine size={50} />
+															<p className="">Linkedin profile</p>
+														</a>
 													</li>
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
-														<FiGithub size={50} />
-														<p className="">GitHub moromichele</p>
+														<a
+															target="_blank"
+															rel="noopener noreferrer"
+															href={githubProfile}
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+														>
+															<FiGithub size={50} />
+															<p className="">GitHub moromichele</p>
+														</a>
 													</li>
-													{/* TODO make links work */}
 												</ul>
 											</nav>
 										</div>
@@ -468,11 +495,75 @@ export default function Home() {
 						</div>
 					</div>
 				</main>
-				<footer className="min-h-[100px] bg-zinc-300 dark:bg-zinc-800 w-full text-zinc-900 dark:text-zinc-200 p-5">
-					<p>Michele Moro C 2022</p>
-					<p>Created with NextJS and TailwindCSS</p>
-					<p>Design inspire by the Tokyo Metro</p>
-					<p>nav with icons and links</p>
+				<footer className="mt-20 font-istok min-h-[100px] bg-zinc-300 dark:bg-zinc-800 w-full text-zinc-900 dark:text-zinc-200 p-5 grid sm:grid-rows-2 sm:grid-cols-2 grid-rows-4 grid-cols-1 items-center text-center">
+					<p>&copy; 2022, Michele Moro</p>
+					<p>
+						Created with{" "}
+						<a
+							href="https://nextjs.org/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							NextJS
+						</a>
+						{" / "}
+						<a
+							href="https://tailwindcss.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							TailwindCSS
+						</a>
+						{" / "}
+						<a
+							href="https://www.framer.com/motion/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Framer Motion
+						</a>
+					</p>
+
+					<p className="flex justify-center gap-1">
+						Design inspired by the
+						<a
+							href="https://www.tokyometro.jp/en/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-1"
+						>
+							Tokyo Metro
+							<span className="rounded p-1 bg-cyan-500 dark:bg-cyan-600">
+								<SiTokyometro className="fill-white" />
+							</span>
+						</a>
+					</p>
+					<p className="flex justify-center gap-4 text-[22px]">
+						<a
+							href={`mailto:${myEmail}`}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-1"
+						>
+							<MdOutlineMail className="dark:fill-slate-200 fill-slate-900" />
+						</a>
+						<a
+							href={linkedinProfile}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-1"
+						>
+							<RiLinkedinFill className="dark:fill-slate-200 fill-slate-900" />
+						</a>
+						<a
+							href={githubProfile}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex items-center gap-1"
+						>
+							<FiGithub className="dark:text-slate-200 text-slate-900 fill-none" />
+						</a>
+					</p>
 				</footer>
 			</div>
 		</div>

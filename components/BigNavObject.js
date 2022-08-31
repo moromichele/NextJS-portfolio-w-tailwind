@@ -32,7 +32,7 @@ const BigNavObject = ({ station, isDark }) => {
 								{title[0].toUpperCase()}
 							</div>
 						</div>
-						<p className="font-istok xsm:text-2xl text-base">{title}</p>
+						<p className="font-istok sm:text-2xl xsm:text-[22px] text-base">{title}</p>
 					</div>
 				</Link>
 			</div>

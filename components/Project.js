@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
+import { IoIosWarning } from "react-icons/io";
 
-const Project = ({ prObject }) => {
+const Project = ({ prObject, isDark }) => {
 	const gitHubIcon = () => {
 		return (
 			<a
@@ -30,7 +31,13 @@ const Project = ({ prObject }) => {
 		<div className="border-[1px] border-neutral-400 dark:border-neutral-800 w-full max-w-md rounded-xl overflow-hidden shadow-lg m-[0_auto] bg-neutral-200 dark:bg-slate-500">
 			<div className="relative w-full min-h-[400px] bg-neutral-50 dark:bg-neutral-200">
 				<Image
-					src={prObject.imgSrc}
+					src={
+						isDark
+							? prObject.darkImgSrc
+								? prObject.darkImgSrc
+								: prObject.imgSrc
+							: prObject.imgSrc
+					}
 					alt="project preview"
 					layout="fill"
 					className="object-scale-down lg:object-scale-cover"
@@ -58,6 +65,9 @@ const Project = ({ prObject }) => {
 							</figcaption>
 						</figure>
 					)}
+				</div>
+				<div className="text-neutral-700 dark:text-neutral-200 text-base">
+					{prObject.noDark ? isDark ? <div className="flex items-center gap-2 text-yellow-400"><IoIosWarning/>Bright, no dark mode available</div> : "" : ""}
 				</div>
 			</div>
 			<div className="px-6 pt-4 pb-2">

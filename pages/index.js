@@ -306,7 +306,7 @@ export default function Home() {
 											</div>
 										</div>
 										<p className="text-2xl mt-5 font-thin pl-[5%] text-right">
-											The computer enginerring curriculum is very similar to
+											The computer engineering curriculum is very similar to
 											computer science but with a little less code and a little
 											more math and engineering
 										</p>
@@ -357,7 +357,7 @@ export default function Home() {
 											UI, Spring Boot and PostgreSQL
 										</p>
 										<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
-											Mainteined and completely restyled the company&apos;s main
+											Maintained and completely restyled the company&apos;s main
 											legacy web app <br />
 											(GWT, XML, CSS)
 										</p>

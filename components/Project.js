@@ -10,6 +10,7 @@ const Project = ({ prObject, isDark }) => {
 				className="text-[40px] hover:scale-105"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="Github link to project"
 			>
 				<FaGithubSquare className="fill-neutral-800" />
 			</a>
@@ -22,6 +23,7 @@ const Project = ({ prObject, isDark }) => {
 				className="text-[37px] hover:scale-105"
 				target="_blank"
 				rel="noopener noreferrer"
+				aria-label="Link to project live website"
 			>
 				<FaExternalLinkAlt className="fill-neutral-800" />
 			</a>

@@ -20,6 +20,7 @@ const BigNavObject = ({ station, isDark }) => {
 					offset={0}
 					duration={500}
 					delay={1}
+					aria-label={`Go to ${title}`}
 				>
 					<div className="flex flex-col items-end h-full">
 						<div className="md:h-[240px] h-[30vh]"></div>

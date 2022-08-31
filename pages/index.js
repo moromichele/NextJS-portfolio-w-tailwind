@@ -125,7 +125,7 @@ export default function Home() {
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
 					></meta>
-					<link rel="icon" href="/favicon.ico" />
+					<link rel="icon" href="/icon.ico" />
 				</Head>
 
 				<header className="sticky top-0 flex items-center justify-end p-5 w-full h-[60px] bg-slate-100 dark:bg-slate-700 z-[2] shadow-lg">
@@ -164,6 +164,7 @@ export default function Home() {
 						offset={0}
 						duration={500}
 						className="cursor-pointer"
+						aria-label="Go to experience section"
 					>
 						<p
 							style={{
@@ -184,6 +185,7 @@ export default function Home() {
 						offset={0}
 						duration={500}
 						className="cursor-pointer"
+						aria-label="Go to projects section"
 					>
 						<p
 							style={{
@@ -204,6 +206,7 @@ export default function Home() {
 						offset={0}
 						duration={500}
 						className="cursor-pointer"
+						aria-label="Go to informations section"
 					>
 						<p
 							style={{
@@ -222,6 +225,7 @@ export default function Home() {
 						onClick={() => {
 							setToggleNightMode((s) => !s);
 						}}
+						aria-label="Toggle night mode"
 					>
 						<CgDarkMode className="text-[35px]" />
 					</button>
@@ -455,6 +459,7 @@ export default function Home() {
 												<ul className="sm:text-2xl text-[18px] md:space-y-10 sm:space-y-4 space-y-10 font-bold break-all">
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
 														<a
+															aria-label="Send me an email"
 															target="_blank"
 															rel="noopener noreferrer"
 															href={`mailto:${myEmail}`}
@@ -468,6 +473,7 @@ export default function Home() {
 													</li>
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
 														<a
+															aria-label="Linked profile link"
 															target="_blank"
 															rel="noopener noreferrer"
 															href={linkedinProfile}
@@ -479,6 +485,7 @@ export default function Home() {
 													</li>
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
 														<a
+															aria-label="Github profile link"
 															target="_blank"
 															rel="noopener noreferrer"
 															href={githubProfile}
@@ -546,6 +553,7 @@ export default function Home() {
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex items-center gap-1"
+							aria-label="Send me an email"
 						>
 							<MdOutlineMail className="dark:fill-slate-200 fill-slate-900" />
 						</a>
@@ -554,6 +562,7 @@ export default function Home() {
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex items-center gap-1"
+							aria-label="Linkedin profile link"
 						>
 							<RiLinkedinFill className="dark:fill-slate-200 fill-slate-900" />
 						</a>
@@ -562,6 +571,7 @@ export default function Home() {
 							target="_blank"
 							rel="noopener noreferrer"
 							className="flex items-center gap-1"
+							aria-label="Github profile link"
 						>
 							<FiGithub className="dark:text-slate-200 text-slate-900 fill-none" />
 						</a>

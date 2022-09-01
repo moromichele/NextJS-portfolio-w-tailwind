@@ -233,7 +233,7 @@ export default function Home() {
 
 				<main className="rounded-b-xl max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
 					<div className="xl:w-[1280px] m-[0_auto] min-h-[90vh] bg-slate-50 dark:bg-slate-700">
-						<div className="grid md:grid-cols-2 grid-cols-1 max-w-fll md:min-h-[90vh] min-h-[180vh]">
+						<div className="grid md:grid-cols-2 grid-cols-1 max-w-fll md:min-h-[90vh] min-h-[180vh] bg-red-900 dark:bg-red-900">
 							<div className="h-full flex flex-col">
 								<UserBanner nightMode={toggleNightMode} />
 								<nav className="md:h-5/6 h-[85%]">
@@ -248,7 +248,7 @@ export default function Home() {
 									</ul>
 								</nav>
 							</div>
-							<div className="font-istok dark:animate-lights  flex items-center justify-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight subpixel-antialiased dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+							<div className="font-istok dark:animate-lights  flex items-center justify-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
 								Benvenuti
 								<br />
 								Welcome
@@ -264,7 +264,7 @@ export default function Home() {
 					<div
 						ref={ref1}
 						id="edu_exp"
-						className="border-t-black border-t-[100px] -mt-[100px] xl:w-[1280px] m-[0_auto] text-stone-700 dark:text-stone-300 bg-stone-200 dark:bg-stone-900"
+						className="border-red-900 border-t-[100px] -mt-[100px] xl:w-[1280px] m-[0_auto] text-stone-700 dark:text-stone-300 bg-stone-200 dark:bg-stone-900"
 					>
 						<div className="min-h-[90vh]">
 							<StationHeader
@@ -353,7 +353,7 @@ export default function Home() {
 											</div>
 										</div>
 										<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
-											Developed a web app for a client using React with Chakra
+											Developed a RESTful web app for a client using React with Chakra
 											UI, Spring Boot and PostgreSQL
 										</p>
 										<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
@@ -424,7 +424,7 @@ export default function Home() {
 										for cars, especially classic race cars. I grew up dreaming
 										about becoming a car designer, now I do car photography as a
 										hobby.
-										<br />I also like to skateboard and playing basketball, even
+										<br />I also like to skateboard and to play basketball, even
 										though Tuscany is not the best place for both of these
 										things.
 										<br />
@@ -449,7 +449,7 @@ export default function Home() {
 									<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
 										<div>
 											The cake is a lie. Fun fact: the town I grew up in has
-											around 40 people and no stores of any kind.
+											around 40 people and no shops of any kind.
 										</div>
 										<div className="h-full md:w-full sm:w-[80%] w-[90%] md:p-3 p-1 text-slate-100 dark:text-slate-300 mx-auto xsm:pt-5 pt-20 flex flex-col justify-around">
 											<h1 className="md:text-6xl text-5xl mb-4 text-center">

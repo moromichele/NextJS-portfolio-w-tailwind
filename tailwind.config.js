@@ -15,6 +15,7 @@ module.exports = {
 			},
 			screens: {
 				xsm: "380px",
+				'desktophover': {'raw': '(hover: hover)'},
 			},
 			keyframes: {
 				lights: {

@@ -104,12 +104,9 @@ export default function Home() {
 
 	useEffect(() => {
 		//defaults to dark/light mode from device
-		window
-			.matchMedia("(prefers-color-scheme: dark)")
-			.addEventListener("change", (event) => {
-				const colorScheme = event.matches ? true : false; //true: its dark mode
-				setToggleNightMode(colorScheme);
-			});
+		const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+		setToggleNightMode(defaultDark)
 	}, []);
 
 	return (
@@ -172,7 +169,7 @@ export default function Home() {
 									? experienceStation.dark
 									: experienceStation.light,
 							}}
-							className="hover:scale-110 fixed sm:left-[26.5%] left-[25.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] text-center box-content text-black z-[6]"
+							className="desktophover:scale-110 fixed sm:left-[26.5%] left-[25.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] text-center box-content text-black z-[6]"
 						>
 							{experienceStation.title[0].toUpperCase()}
 						</p>
@@ -193,7 +190,7 @@ export default function Home() {
 									? projectStation.dark
 									: projectStation.light,
 							}}
-							className="hover:scale-110 fixed sm:left-[51.5%] left-[50.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
+							className="desktophover:scale-110 fixed sm:left-[51.5%] left-[50.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 						>
 							{projectStation.title[0].toUpperCase()}
 						</p>
@@ -214,14 +211,14 @@ export default function Home() {
 									? aboutStation.dark
 									: aboutStation.light,
 							}}
-							className="hover:scale-110 fixed sm:left-[76.5%] left-[75.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
+							className="desktophover:scale-110 fixed sm:left-[76.5%] left-[75.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 						>
 							{aboutStation.title[0].toUpperCase()}
 						</p>
 					</Link>
 					<div className="fixed bg-slate-900 dark:bg-slate-200 h-[16px] xl:w-[96%] md:w-[94%] w-[90%] top-[22px] left-[2%] z-[3]" />
 					<button
-						className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] hover:scale-105 z-[4]"
+						className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] desktophover:scale-105 z-[4]"
 						onClick={() => {
 							setToggleNightMode((s) => !s);
 						}}
@@ -463,7 +460,7 @@ export default function Home() {
 															target="_blank"
 															rel="noopener noreferrer"
 															href={`mailto:${myEmail}`}
-															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:border-white"
 														>
 															<MdOutlineMail size={50} />
 															<address className="not-italic ">
@@ -477,7 +474,7 @@ export default function Home() {
 															target="_blank"
 															rel="noopener noreferrer"
 															href={linkedinProfile}
-															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:border-white"
 														>
 															<RiLinkedinBoxLine size={50} />
 															<p className="">Linkedin profile</p>
@@ -489,7 +486,7 @@ export default function Home() {
 															target="_blank"
 															rel="noopener noreferrer"
 															href={githubProfile}
-															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent hover:border-white"
+															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:border-white"
 														>
 															<FiGithub size={50} />
 															<p className="">GitHub moromichele</p>

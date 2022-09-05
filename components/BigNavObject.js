@@ -10,7 +10,7 @@ const BigNavObject = ({ station, isDark }) => {
 		<li className="">
 			<div
 				style={{ backgroundColor: bgColorReal }}
-				className="w-full h-full transition-transform cursor-pointer text-center text-neutral-100 dark:text-white text-4xl p-2 desktophover:scale-105 desktophover:shadow-[3px_3px_0px_0px_black] dark:desktophover:shadow-[3px_3px_0px_0px_black_,_inset_0_0_3px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
+				className="w-full h-full transition-transform cursor-pointer text-center text-neutral-100 dark:text-white text-4xl p-2 desktophover:hover:scale-105 desktophover:hover:shadow-[3px_3px_0px_0px_black] dark:desktophover:hover:shadow-[3px_3px_0px_0px_black_,_inset_0_0_3px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
 			>
 				<Link
 					activeClass="active"

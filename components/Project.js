@@ -7,7 +7,7 @@ const Project = ({ prObject, isDark }) => {
 		return (
 			<a
 				href={prObject.gitHub}
-				className="text-[40px] desktophover:scale-105"
+				className="text-[40px] desktophover:hover:scale-105"
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Github link to project"
@@ -20,7 +20,7 @@ const Project = ({ prObject, isDark }) => {
 		return (
 			<a
 				href={prObject.liveSite}
-				className="text-[37px] desktophover:scale-105"
+				className="text-[37px] desktophover:hover:scale-105"
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Link to project live website"

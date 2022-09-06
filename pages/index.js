@@ -51,7 +51,7 @@ const projectPortfolio = {
 	gitHub: "https://github.com/moromichele/NextJS-portfolio-w-tailwind",
 	imgSrc: "/portfolio-l-screenshot.webp",
 	darkImgSrc: "/portfolio-d-screenshot.webp",
-	tags: ["NextJS", "Framer-Motion", "Tailwind"],
+	tags: ["NextJS", "Framer-Motion", "TailwindCSS"],
 };
 
 const projectsArray = [projectRainApp, projectMemoryGame, projectPortfolio];

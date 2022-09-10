@@ -16,7 +16,7 @@ const UserBanner = ({ nightMode }) => {
 				<h1 className="lg:text-4xl xsm:text-2xl text-2xl">Michele Moro</h1>
 				<h1 className="lg:text-4xl sm:text-2xl text-1xl">ミケレ・モロ</h1>
 				<h2 className="lg:text-2xl sm:text-base text-base">
-					Junior frontend developer
+					Junior software developer
 				</h2>
 			</div>
 		</div>

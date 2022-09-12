@@ -23,6 +23,16 @@ const lorem = () => {
 	return "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 };
 
+const projectF1Standings = {
+	name: "F1 Standings",
+	liveSite: "https://moromichele.github.io/F1-Standings/",
+	gitHub: "https://github.com/moromichele/F1-standings/",
+	desc: "Historical F1 standings data",
+	imgSrc: "/f1-screenshot.webp",
+	darkImgSrc: "/f1-d-screenshot.webp",
+	tags: ["TypeScript", "React", "Redux-Toolkit", "API", "RTK Query", "Styled-Components"],
+};
+
 const projectRainApp = {
 	name: "Will it rain",
 	liveSite: "https://moromichele.github.io/weather-it-will-rain-react/",
@@ -54,7 +64,7 @@ const projectPortfolio = {
 	tags: ["NextJS", "Framer-Motion", "TailwindCSS"],
 };
 
-const projectsArray = [projectRainApp, projectMemoryGame, projectPortfolio];
+const projectsArray = [projectF1Standings, projectRainApp, projectMemoryGame, projectPortfolio];
 
 const experienceStation = {
 	light: colors.yellow[500],
@@ -393,7 +403,7 @@ export default function Home() {
 								isDark={toggleNightMode}
 							/>
 							<div className="p-4">
-								<div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch justify-items-stretch">
+								<div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
 									{projectsArray.map((p, i) => (
 										<Project key={i} prObject={p} isDark={toggleNightMode} />
 									))}

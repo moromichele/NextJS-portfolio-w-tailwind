@@ -3,7 +3,7 @@ import { FaGithubSquare, FaExternalLinkAlt } from "react-icons/fa";
 import { IoIosWarning } from "react-icons/io";
 
 const Project = ({ prObject, isDark }) => {
-	const gitHubIcon = () => {
+	const GitHubIcon = () => {
 		return (
 			<a
 				href={prObject.gitHub}
@@ -16,7 +16,7 @@ const Project = ({ prObject, isDark }) => {
 			</a>
 		);
 	};
-	const liveSiteIcon = () => {
+	const LiveSiteIcon = () => {
 		return (
 			<a
 				href={prObject.liveSite}
@@ -49,8 +49,8 @@ const Project = ({ prObject, isDark }) => {
 				<div className="text-neutral-900 dark:text-neutral-300 font-bold text-xl mb-2 flex justify-between items-center">
 					{prObject.name}
 					<div className="flex gap-2">
-						{prObject.gitHub ? gitHubIcon() : ""}
-						{prObject.liveSite ? liveSiteIcon() : ""}
+						{prObject.gitHub ? <GitHubIcon /> : ""}
+						{prObject.liveSite ? <LiveSiteIcon /> : ""}
 					</div>
 				</div>
 				<div className="text-neutral-700 dark:text-neutral-200 text-base">

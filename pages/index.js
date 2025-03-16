@@ -1,23 +1,41 @@
-import Head from "next/head";
-import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
-import Project from "../components/Project.js";
-import BigNavObject from "../components/BigNavObject.js";
-import colors from "tailwindcss/colors";
-import UserBanner from "../components/UserBanner.js";
-import { motion, useScroll } from "framer-motion";
-import StationHeader from "../components/StationHeader.js";
-import StationNavigator from "../components/StationNavigator.js";
-import { CgDarkMode } from "react-icons/cg";
-import { Link } from "react-scroll";
-import { MdSchool, MdOutlineMail, MdWork } from "react-icons/md";
-import { RiLinkedinBoxLine, RiLinkedinFill } from "react-icons/ri";
-import { FiGithub } from "react-icons/fi";
-import { SiTokyometro } from "react-icons/si";
+import Head from "next/head"
+import Image from "next/image"
+import React, { useState, useEffect, useRef } from "react"
+import { ProjectCard } from "/components/ProjectCard.js"
+import { HeaderNavPanel } from "/components/HeaderNavPanel.js"
+import colors from "tailwindcss/colors"
+import { UserBanner } from "/components/UserBanner.js"
+import { motion, useScroll } from "framer-motion"
+import { StationHeader } from "/components/StationHeader.js"
+import { StationNavigator } from "/components/StationNavigator.js"
+import { CgDarkMode } from "react-icons/cg"
+import { Link } from "react-scroll"
+import { MdSchool, MdOutlineMail, MdWork } from "react-icons/md"
+import { RiLinkedinBoxLine, RiLinkedinFill } from "react-icons/ri"
+import { FiGithub } from "react-icons/fi"
+import { SiTokyometro } from "react-icons/si"
 
-const linkedinProfile = "https://www.linkedin.com/in/michele-moro-07a81a21b/";
-const githubProfile = "https://github.com/moromichele";
-const myEmail = "moro.michele1997@gmail.com";
+const linkedinProfile = "https://www.linkedin.com/in/michele-moro-07a81a21b/"
+const githubProfile = "https://github.com/moromichele"
+const myEmail = "moro.michele1997@gmail.com"
+
+const projectF1StandingsV2 = {
+	name: "F1 Standings - V2",
+	liveSite: "https://moromichele.github.io/Formula-1-2/",
+	gitHub: "https://github.com/moromichele/Formula-1-2/",
+	desc: "Historical F1 standings data, with a better stack",
+	imgSrc: "/formula-1-2-screen.webp",
+	tags: [
+		"TypeScript",
+		"React",
+		"TanStack Query",
+		"API",
+		"Axios",
+		"CSS Modules",
+		"2025",
+	],
+	noDark: true,
+}
 
 const projectF1Standings = {
 	name: "F1 Standings",
@@ -26,8 +44,16 @@ const projectF1Standings = {
 	desc: "Historical F1 standings data",
 	imgSrc: "/f1-screenshot.webp",
 	darkImgSrc: "/f1-d-screenshot.webp",
-	tags: ["TypeScript", "React", "Redux-Toolkit", "API", "RTK Query", "Styled-Components"],
-};
+	tags: [
+		"TypeScript",
+		"React",
+		"Redux-Toolkit",
+		"API",
+		"RTK Query",
+		"Styled-Components",
+		"2022",
+	],
+}
 
 const projectRainApp = {
 	name: "Will it rain",
@@ -35,18 +61,9 @@ const projectRainApp = {
 	gitHub: "https://github.com/moromichele/weather-it-will-rain-react",
 	desc: "A minimal-accuracy weather app",
 	imgSrc: "/rain-screenshot.webp",
-	tags: ["React", "API", "Axios"],
+	tags: ["React", "API", "Axios", "2022"],
 	noDark: true,
-};
-
-const projectMemoryGame = {
-	name: "Memory game",
-	liveSite: "https://moromichele.github.io/memory-game-react/",
-	gitHub: "https://github.com/moromichele/memory-game-react",
-	desc: "A simple memory game",
-	imgSrc: "/memory-screenshot.webp",
-	tags: ["React", "Game"],
-};
+}
 
 const projectPortfolio = {
 	name: "Portfolio website",
@@ -58,67 +75,69 @@ const projectPortfolio = {
 	imgSrc: "/portfolio-l-screenshot.webp",
 	darkImgSrc: "/portfolio-d-screenshot.webp",
 	tags: ["NextJS", "Framer-Motion", "TailwindCSS"],
-};
+}
 
-const projectsArray = [projectF1Standings, projectRainApp, projectMemoryGame, projectPortfolio];
+const projectsArray = [
+	projectF1StandingsV2,
+	projectF1Standings,
+	projectRainApp,
+	projectPortfolio,
+]
 
 const experienceStation = {
-	light: colors.yellow[500],
-	dark: colors.yellow[600],
+	getColorByTheme: (isDarkMode) =>
+		isDarkMode ? colors.yellow[600] : colors.yellow[500],
 	title: "Education and work experience",
 	to: "edu_exp",
-};
+}
 
 const projectStation = {
-	light: colors.green[500],
-	dark: colors.green[600],
+	getColorByTheme: (isDarkMode) =>
+		isDarkMode ? colors.green[600] : colors.green[500],
 	title: "Projects",
 	to: "projects",
-};
+}
 
 const aboutStation = {
-	light: colors.indigo[500],
-	dark: colors.indigo[600],
+	getColorByTheme: (isDarkMode) =>
+		isDarkMode ? colors.indigo[600] : colors.indigo[500],
 	title: "Informations",
 	to: "about",
-};
+}
 
-const stationsArray = [experienceStation, projectStation, aboutStation];
+const stationsArray = [experienceStation, projectStation, aboutStation]
 
 export default function Home() {
-	const [toggleNightMode, setToggleNightMode] = useState(false);
+	const [isDarkMode, setIsDarkMode] = useState(false)
 
-	const { scrollYProgress } = useScroll();
+	const ref1 = useRef(null)
+	const ref2 = useRef(null)
+	const ref3 = useRef(null)
 
-	const ref1 = useRef(null);
-	const ref2 = useRef(null);
-	const ref3 = useRef(null);
-
-	const refArr = [ref1, ref2, ref3];
 	const scroll1 = useScroll({
 		target: ref1,
 		offset: ["start center", "start"],
-	});
+	})
 	const scroll2 = useScroll({
 		target: ref2,
 		offset: ["start center", "start"],
-	});
+	})
 	const scroll3 = useScroll({
 		target: ref3,
 		offset: ["start end", "start center"],
-	});
+	})
 
 	useEffect(() => {
 		//defaults to dark/light mode from device
 		const defaultDark = window.matchMedia(
 			"(prefers-color-scheme: dark)"
-		).matches;
+		).matches
 
-		setToggleNightMode(defaultDark);
-	}, []);
+		setIsDarkMode(defaultDark)
+	}, [])
 
 	return (
-		<div className={toggleNightMode ? "dark" : ""}>
+		<div className={isDarkMode ? "dark" : ""}>
 			<div className="flex flex-col items-center break-words bg-neutral-100 dark:bg-neutral-900">
 				<Head>
 					<title>Michele Moro - Personal website</title>
@@ -137,27 +156,21 @@ export default function Home() {
 					<motion.div
 						style={{
 							scaleX: scroll1.scrollYProgress,
-							backgroundColor: toggleNightMode
-								? experienceStation.dark
-								: experienceStation.light,
+							backgroundColor: experienceStation.getColorByTheme(isDarkMode),
 						}}
 						className="fixed top-[20px] left-[2%] h-[20px] w-1/4 origin-[0%] z-[5]"
 					/>
 					<motion.div
 						style={{
 							scaleX: scroll2.scrollYProgress,
-							backgroundColor: toggleNightMode
-								? projectStation.dark
-								: projectStation.light,
+							backgroundColor: projectStation.getColorByTheme(isDarkMode),
 						}}
 						className="fixed top-[20px] left-[27%] h-[20px] w-1/4 origin-[0%] right-0 z-[5]"
 					/>
 					<motion.div
 						style={{
 							scaleX: scroll3.scrollYProgress,
-							backgroundColor: toggleNightMode
-								? aboutStation.dark
-								: aboutStation.light,
+							backgroundColor: aboutStation.getColorByTheme(isDarkMode),
 						}}
 						className="fixed top-[20px] left-[52%] h-[20px]  w-1/4 origin-[0%] right-0 z-[5]"
 					/>
@@ -173,9 +186,7 @@ export default function Home() {
 					>
 						<p
 							style={{
-								borderColor: toggleNightMode
-									? experienceStation.dark
-									: experienceStation.light,
+								borderColor: experienceStation.getColorByTheme(isDarkMode),
 							}}
 							className="desktophover:hover:scale-110 fixed sm:left-[26.5%] left-[25.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] text-center box-content text-black z-[6]"
 						>
@@ -194,9 +205,7 @@ export default function Home() {
 					>
 						<p
 							style={{
-								borderColor: toggleNightMode
-									? projectStation.dark
-									: projectStation.light,
+								borderColor: projectStation.getColorByTheme(isDarkMode),
 							}}
 							className="desktophover:hover:scale-110 fixed sm:left-[51.5%] left-[50.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 						>
@@ -215,9 +224,7 @@ export default function Home() {
 					>
 						<p
 							style={{
-								borderColor: toggleNightMode
-									? aboutStation.dark
-									: aboutStation.light,
+								borderColor: aboutStation.getColorByTheme(isDarkMode),
 							}}
 							className="desktophover:hover:scale-110 fixed sm:left-[76.5%] left-[75.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 						>
@@ -228,7 +235,7 @@ export default function Home() {
 					<button
 						className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] desktophover:hover:scale-105 z-[4]"
 						onClick={() => {
-							setToggleNightMode((s) => !s);
+							setIsDarkMode((s) => !s)
 						}}
 						aria-label="Toggle night mode"
 					>
@@ -240,27 +247,28 @@ export default function Home() {
 					<div className="xl:w-[1280px] m-[0_auto] min-h-[90vh] bg-slate-50 dark:bg-slate-700">
 						<div className="grid md:grid-cols-2 grid-cols-1 max-w-fll md:min-h-[90vh] min-h-[180vh] bg-red-900 dark:bg-red-900">
 							<div className="h-full flex flex-col">
-								<UserBanner nightMode={toggleNightMode} />
+								<UserBanner isDarkMode={isDarkMode} />
 								<nav className="md:h-5/6 h-[85%]">
 									<ul className="grid grid-cols-3 h-full">
 										{stationsArray.map((s, i) => (
-											<BigNavObject
-												station={s}
+											<HeaderNavPanel
+												title={s.title}
+												color={s.getColorByTheme(isDarkMode)}
+												to={s.to}
 												key={i}
-												isDark={toggleNightMode}
 											/>
 										))}
 									</ul>
 								</nav>
 							</div>
-							<div className="font-istok dark:animate-lights  flex items-center justify-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+							<div className="font-istok dark:animate-lights  flex items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+								ようこそ
+								<br />
 								Benvenuti
 								<br />
 								Welcome
 								<br />
-								Bienvenue
-								<br />
-								ようこそ
+								Vítejte
 								<br />
 							</div>
 						</div>
@@ -273,11 +281,11 @@ export default function Home() {
 					>
 						<div className="min-h-[90vh]">
 							<StationHeader
-								station={experienceStation}
-								isDark={toggleNightMode}
+								title={experienceStation.title}
+								color={experienceStation.getColorByTheme(isDarkMode)}
 							/>
 							<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh] p-5">
-								<section className="">
+								<section>
 									<MdSchool
 										size={150}
 										className="fill-stone-700 dark:fill-stone-300 mt-5"
@@ -286,9 +294,8 @@ export default function Home() {
 										<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 -ml-5" />
 										<div
 											style={{
-												backgroundColor: toggleNightMode
-													? experienceStation.dark
-													: experienceStation.light,
+												backgroundColor:
+													experienceStation.getColorByTheme(isDarkMode),
 											}}
 											className="w-[calc(100% + 5px)] h-[30px] -ml-5"
 										/>
@@ -323,18 +330,56 @@ export default function Home() {
 										</p>
 									</div>
 								</section>
-								<section className="">
+								<section>
 									<MdWork
 										size={150}
 										className="fill-stone-700 dark:fill-stone-300 mt-5 md:mr-0 md:ml-auto"
 									/>
+									<div className="w-[80%] md:ml-auto mb-[30px]">
+										<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 md:-mr-5 md:md-0 md:ml-0 -ml-5" />
+										<div
+											style={{
+												backgroundColor:
+													experienceStation.getColorByTheme(isDarkMode),
+											}}
+											className="w-[calc(100% + 5px)] h-[30px]  md:-mr-5 -ml-5 md:ml-auto"
+										/>
+
+										<a
+											className="w-full mt-5 md:mr-auto block"
+											href="https://www.emplifi.io/"
+											target="_blank"
+											rel="noreferrer"
+											aria-label="Link to Emplifi Inc. website"
+										>
+											<div className="flex justify-between mb-2">
+												<div className="flex flex-col justify-between">
+													<div className="text-2xl font-bold">Emplifi Inc.</div>
+													<div className="text-xl">
+														Prague, Czech republic - Full time
+													</div>
+												</div>
+												<div className="h-fill flex items-end text-right sm:text-4xl text-3xl">
+													From 02-2023
+												</div>
+											</div>
+											<div className="w-fill h-[3px] bg-stone-700 dark:bg-stone-300" />
+											<div className="w-fill sm:text-[47px] text-[40px] md:text-left text-right">
+												Full stack Developer
+											</div>
+										</a>
+										<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
+											Worked with TypeScript + React on fronted and node on
+											backend on a large enterprise level SaaS in an agile
+											environment.
+										</p>
+									</div>
 									<div className="w-[80%] md:ml-auto">
 										<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 md:-mr-5 md:md-0 md:ml-0 -ml-5" />
 										<div
 											style={{
-												backgroundColor: toggleNightMode
-													? experienceStation.dark
-													: experienceStation.light,
+												backgroundColor:
+													experienceStation.getColorByTheme(isDarkMode),
 											}}
 											className="w-[calc(100% + 5px)] h-[30px]  md:-mr-5 -ml-5 md:ml-auto"
 										/>
@@ -366,7 +411,7 @@ export default function Home() {
 											</div>
 											<div className="w-fill h-[3px] bg-stone-700 dark:bg-stone-300" />
 											<div className="w-fill sm:text-[47px] text-[40px] md:text-left text-right">
-												Full-stack Developer
+												Full stack Developer
 											</div>
 										</a>
 										<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
@@ -390,18 +435,26 @@ export default function Home() {
 						className="xl:w-[1280px] m-[0_auto] bg-neutral-50 dark:bg-neutral-700"
 					>
 						<StationNavigator
-							down={stationsArray.slice(2)}
-							isDark={toggleNightMode}
+							downArr={stationsArray.slice(2)}
+							isDark={isDarkMode}
 						/>
 						<div className="min-h-[90vh]">
 							<StationHeader
-								station={projectStation}
-								isDark={toggleNightMode}
+								title={projectStation.title}
+								color={projectStation.getColorByTheme(isDarkMode)}
 							/>
 							<div className="p-4">
 								<div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
-									{projectsArray.map((p, i) => (
-										<Project key={i} prObject={p} isDark={toggleNightMode} />
+									{projectsArray.map((project, i) => (
+										<ProjectCard
+											key={i}
+											projectObj={project}
+											imgSrc={
+												isDarkMode && project.darkImgSrc
+													? project.darkImgSrc
+													: project.imgSrc
+											}
+										/>
 									))}
 								</div>
 							</div>
@@ -412,20 +465,20 @@ export default function Home() {
 						id={aboutStation.to}
 						className="rounded-b-xl xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700 "
 					>
-						<StationNavigator
-							up={[stationsArray[0]]}
-							isDark={toggleNightMode}
-						/>
+						<StationNavigator upArr={[stationsArray[0]]} isDark={isDarkMode} />
 						<div className="rounded-b-xl">
-							<StationHeader station={aboutStation} isDark={toggleNightMode} />
+							<StationHeader
+								title={aboutStation.title}
+								color={aboutStation.getColorByTheme(isDarkMode)}
+							/>
 							<div className="rounded-b-xl py-10 relative grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] p-3 bg-slate-100 dark:bg-slate-700">
 								<section className="text-center rounded shadow-xl p-6 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-300 z-[1]">
 									<div className="relative float float-left rounded-full border-slate-900 overflow-hidden w-[170px] h-[170px] bg-slate-50 dark:bg-slate-200 shadow-[0px_0px_1px_2px_gray] dark:shadow-[0px_0px_1px_2px_black]">
 										<Image
 											src="/profile_pic.webp"
 											alt="picture of me"
-											layout="fill"
 											className="object-cover lg:object-scale-cover scale-125 translate-y-[10px]"
+											fill
 										/>
 									</div>
 									<p className="font-istok text-1xl text-right">
@@ -446,34 +499,26 @@ export default function Home() {
 										things.
 										<br />
 										<br />
-										<strong>What&apos;s next?</strong>
-										<br />
-										I&apos;ve decided to quit my job here in Italy and to move
-										outside of the italian countryside. I would like to focus my
-										career on the frontend side of web programming, as I found
-										it to be the most interesting for me at my last job.
 									</p>
 								</section>
-								<div className=""></div>
+								<div />
 								<div
 									style={{
-										backgroundColor: toggleNightMode
-											? aboutStation.dark
-											: aboutStation.light,
+										backgroundColor: aboutStation.getColorByTheme(isDarkMode),
 									}}
 									className="top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 absolute w-[80%] md:h-[70%] h-[90%] rounded shadow-lg"
 								>
 									<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
 										<div>
 											The cake is a lie. Fun fact: the town I grew up in has
-											around 40 people and no shops of any kind.
+											a population of around 40 people and no shops of any kind.
 										</div>
 										<div className="h-full md:w-full sm:w-[80%] w-[90%] md:p-3 p-1 text-slate-100 dark:text-slate-300 mx-auto xsm:pt-5 pt-20 flex flex-col justify-around">
 											<h1 className="md:text-6xl text-5xl mb-4 text-center">
 												Contacts
 											</h1>
 											<nav>
-												<ul className="sm:text-2xl text-[18px] md:space-y-10 sm:space-y-4 space-y-10 font-bold break-all">
+												<ul className="flex flex-col sm:text-2xl text-[18px] gap-3 font-bold break-all">
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
 														<a
 															aria-label="Send me an email"
@@ -497,7 +542,7 @@ export default function Home() {
 															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white"
 														>
 															<RiLinkedinBoxLine size={50} />
-															<p className="">Linkedin profile</p>
+															<p>Linkedin profile</p>
 														</a>
 													</li>
 													<li className="flex sm:flex-row flex-col gap-2 items-center ">
@@ -509,7 +554,7 @@ export default function Home() {
 															className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white"
 														>
 															<FiGithub size={50} />
-															<p className="">GitHub moromichele</p>
+															<p>GitHub moromichele</p>
 														</a>
 													</li>
 												</ul>
@@ -596,5 +641,5 @@ export default function Home() {
 				</footer>
 			</div>
 		</div>
-	);
+	)
 }

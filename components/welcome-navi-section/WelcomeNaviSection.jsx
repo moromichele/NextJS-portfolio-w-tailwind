@@ -1,0 +1,42 @@
+import { UserBanner } from "./UserBanner"
+import { WelcomeNavButton } from "./WelcomeNavButton"
+import { experienceStation, projectStation, aboutStation } from "../../constants"
+import { useTheme } from "../../context/ThemeContext"
+
+const stationsArray = [experienceStation, projectStation, aboutStation]
+
+export function WelcomeNaviSection() {
+	const { isDarkMode } = useTheme()
+
+	return (
+		<div className="xl:w-[1280px] m-[0_auto] min-h-[90vh] bg-slate-50 dark:bg-slate-700">
+			<div className="grid md:grid-cols-2 grid-cols-1 max-w-fll md:min-h-[90vh] min-h-[180vh] bg-red-900 dark:bg-red-900">
+				<div className="h-full flex flex-col">
+					<UserBanner isDarkMode={isDarkMode} />
+					<nav className="md:h-5/6 h-[85%]">
+						<ul className="grid grid-cols-3 h-full">
+							{stationsArray.map((s, i) => (
+								<WelcomeNavButton
+									title={s.title}
+									color={s.getColorByTheme(isDarkMode)}
+									to={s.to}
+									key={i}
+								/>
+							))}
+						</ul>
+					</nav>
+				</div>
+				<div className="font-istok dark:animate-lights  flex items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+					ようこそ
+					<br />
+					Benvenuti
+					<br />
+					Welcome
+					<br />
+					Vítejte
+					<br />
+				</div>
+			</div>
+		</div>
+	)
+}

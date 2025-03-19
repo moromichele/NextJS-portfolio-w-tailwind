@@ -1,4 +1,4 @@
-export function StationHeader ({ color, title }) {
+export function StationHeader({ color, title }) {
 	return (
 		<div
 			style={{ backgroundColor: color }}

@@ -1,6 +1,9 @@
 import { BiUserCircle } from "react-icons/bi"
+import { useTheme } from "../../context/ThemeContext"
 
-export function UserBanner({ isDarkMode }) {
+export function UserBanner() {
+	const { isDarkMode } = useTheme()
+	
 	return (
 		<div className="bg-slate-100 dark:bg-slate-900 md:h-1/6 sm:h-[20%] h-[15%] flex p-4 md:gap-3 gap-5 items-center shadow-[inset_0_0_6px_0px_gray] dark:shadow-[inset_0_0_6px_0px_black]">
 			<div className="bg-red-600 w-[30px] h-[100%]"></div>

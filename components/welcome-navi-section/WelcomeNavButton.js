@@ -2,7 +2,7 @@ import { Link } from "react-scroll"
 import { AiOutlineArrowRight } from "react-icons/ai"
 import React, { useRef } from "react"
 
-export function HeaderNavPanel ({color, title, to}) {
+export function WelcomeNavButton ({color, title, to}) {
 	const inputRef = useRef(null)
 
 	return (

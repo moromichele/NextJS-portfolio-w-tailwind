@@ -109,7 +109,7 @@ export function EduAndWorkSection({ scrollRef }) {
 							</p>
 							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right [&>span]:font-semibold">
 								Worked as part of a small <span>agile team</span>, in direct
-								contact with project managers, designers and other teams in case
+								contact with project managers, product, designers and other teams in case
 								of company wide initiatives
 							</p>
 						</div>

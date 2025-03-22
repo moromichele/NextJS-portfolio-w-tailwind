@@ -1,24 +1,12 @@
-import { motion, useScroll } from "framer-motion"
+import { motion } from "framer-motion"
 import { CgDarkMode } from "react-icons/cg"
 import { Link } from "react-scroll"
 import React from "react"
 import { experienceStation, projectStation, aboutStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 
-export function Header({ refs: [ref1, ref2, ref3] }) {
+export function Header({ scrolls: [scroll1, scroll2, scroll3] }) {
 	const { isDarkMode, setIsDarkMode } = useTheme()
-	const scroll1 = useScroll({
-		target: ref1,
-		offset: ["start center", "start"],
-	})
-	const scroll2 = useScroll({
-		target: ref2,
-		offset: ["start center", "start"],
-	})
-	const scroll3 = useScroll({
-		target: ref3,
-		offset: ["start end", "start center"],
-	})
 
 	return (
 		<header className="sticky top-0 flex items-center justify-end p-5 w-full h-[60px] bg-slate-100 dark:bg-slate-700 z-[2] shadow-lg">

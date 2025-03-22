@@ -9,6 +9,7 @@ import { WelcomeNaviSection } from "../components/welcome-navi-section/WelcomeNa
 import { aboutStation, experienceStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 import { StationsDirectionSign } from "../components/StationsDirectionSign"
+import { useScroll } from "framer-motion"
 
 export default function Home() {
 	const { isDarkMode, setIsDarkMode } = useTheme()
@@ -26,6 +27,19 @@ export default function Home() {
 	const ref2 = useRef(null)
 	const ref3 = useRef(null)
 
+	const scroll1 = useScroll({
+		target: ref1,
+		offset: ["start center", "start"],
+	})
+	const scroll2 = useScroll({
+		target: ref2,
+		offset: ["start center", "start"],
+	})
+	const scroll3 = useScroll({
+		target: ref3,
+		offset: ["start end", "start center"],
+	})
+
 	return (
 		<>
 			<Head>
@@ -42,7 +56,7 @@ export default function Home() {
 			</Head>
 			<div className={isDarkMode ? "dark" : ""}>
 				<div className="flex flex-col items-center break-words bg-neutral-100 dark:bg-neutral-900">
-					<Header refs={[ref1, ref2, ref3]} />
+					<Header scrolls={[scroll1, scroll2, scroll3]} />
 					<main className="rounded-b-xl max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
 						<WelcomeNaviSection />
 						<EduAndWorkSection scrollRef={ref1} />

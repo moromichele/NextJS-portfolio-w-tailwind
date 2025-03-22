@@ -1,6 +1,6 @@
-import { StationHeader } from "/components/StationHeader.js"
+import { StationHeader } from "/components/StationHeader"
 import { projectStation } from "../constants"
-import { ProjectCard } from "/components/ProjectCard.js"
+import { ProjectCard } from "/components/ProjectCard"
 import { projectsArray } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 

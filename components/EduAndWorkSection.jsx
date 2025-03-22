@@ -1,11 +1,11 @@
 import { MdSchool, MdWork } from "react-icons/md"
-import { StationHeader } from "/components/StationHeader.js"
+import { StationHeader } from "/components/StationHeader"
 import { experienceStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 
 export function EduAndWorkSection({ scrollRef }) {
-    const { isDarkMode } = useTheme()
-    
+	const { isDarkMode } = useTheme()
+
 	return (
 		<div
 			ref={scrollRef}
@@ -56,11 +56,6 @@ export function EduAndWorkSection({ scrollRef }) {
 									Computer Engineering
 								</div>
 							</a>
-							<p className="text-2xl mt-5 font-thin pl-[5%] text-right">
-								The computer engineering curriculum is very similar to computer
-								science but with a little less code and a little more math and
-								engineering
-							</p>
 						</div>
 					</section>
 					<section>
@@ -89,11 +84,16 @@ export function EduAndWorkSection({ scrollRef }) {
 									<div className="flex flex-col justify-between">
 										<div className="text-2xl font-bold">Emplifi Inc.</div>
 										<div className="text-xl">
-											Prague, Czech republic - Full time
+											Prague, Czech Republic - Full time
 										</div>
 									</div>
-									<div className="h-fill flex items-end text-right sm:text-4xl text-3xl">
-										From 02-2023
+									<div>
+										<div className="h-fill flex items-end text-right sm:text-4xl text-3xl">
+											02-2023
+										</div>
+										<div className="h-fill flex items-end sm:text-4xl text-3xl">
+											Present
+										</div>
 									</div>
 								</div>
 								<div className="w-fill h-[3px] bg-stone-700 dark:bg-stone-300" />
@@ -101,9 +101,16 @@ export function EduAndWorkSection({ scrollRef }) {
 									Full stack Developer
 								</div>
 							</a>
-							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
-								Worked with TypeScript + React on fronted and node on backend on
-								a large enterprise level SaaS in an agile environment.
+							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right [&>span]:font-semibold">
+								Utilized <span>TypeScript + React</span> on fronted and{" "}
+								<span>Node</span> on backend to help maintain and develop new
+								features on a large, enterprise level social media management
+								platform
+							</p>
+							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right [&>span]:font-semibold">
+								Worked as part of a small <span>agile team</span>, in direct
+								contact with project managers, designers and other teams in case
+								of company wide initiatives
 							</p>
 						</div>
 						<div className="w-[80%] md:ml-auto">

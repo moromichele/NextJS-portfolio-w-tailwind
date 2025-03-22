@@ -1,6 +1,5 @@
 import Head from "next/head"
 import React, { useEffect, useRef } from "react"
-import { StationNavigator } from "/components/StationNavigator.js"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { EduAndWorkSection } from "../components/EduAndWorkSection"
@@ -9,6 +8,7 @@ import { InfoSection } from "../components/InfoSection"
 import { WelcomeNaviSection } from "../components/welcome-navi-section/WelcomeNaviSection"
 import { aboutStation, experienceStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
+import { StationsDirectionSign } from "../components/StationsDirectionSign"
 
 export default function Home() {
 	const { isDarkMode, setIsDarkMode } = useTheme()
@@ -46,9 +46,9 @@ export default function Home() {
 					<main className="rounded-b-xl max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
 						<WelcomeNaviSection />
 						<EduAndWorkSection scrollRef={ref1} />
-						<StationNavigator downArr={[aboutStation]} />
+						<StationsDirectionSign downArr={[aboutStation]} />
 						<ProjectsSection scrollRef={ref2} />
-						<StationNavigator upArr={[experienceStation]} />
+						<StationsDirectionSign upArr={[experienceStation]} />
 						<InfoSection scrollRef={ref3} />
 					</main>
 					<Footer />

@@ -82,8 +82,8 @@ const projectPortfolio = {
 export const projectsArray = [
     projectF1StandingsV2,
     projectF1Standings,
-    projectRainApp,
     projectPortfolio,
+    projectRainApp,
 ]
 
 export const MY_EMAIL = "moro.michele1997@gmail.com"

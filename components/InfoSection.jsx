@@ -1,5 +1,5 @@
 import { aboutStation } from "../constants"
-import { StationHeader } from "/components/StationHeader.js"
+import { StationHeader } from "/components/StationHeader"
 import { MY_EMAIL, LINKEDIN_PROFILE, GITHUB_PROFILE } from "../constants"
 import { MdOutlineMail } from "react-icons/md"
 import { RiLinkedinBoxLine } from "react-icons/ri"
@@ -37,6 +37,10 @@ export function InfoSection({ scrollRef }) {
 							looking hills and cypress trees. I&apos;ve always been interested
 							in technology, at 14 years old I built my first computer and
 							started learning to program in C++ from youtube tutorials.
+							
+							<br />
+							<br />
+							After a short work experience in Italy, I&apos;ve decided to move abroad and I&apos;ve been working as a Full Stack developer in the beautiful city of Prague, Czech Republic, since 2023.
 							<br />
 							<br />
 							<strong>Outside programming</strong>, I have a big passion for
@@ -72,7 +76,7 @@ export function InfoSection({ scrollRef }) {
 												target="_blank"
 												rel="noopener noreferrer"
 												href={`mailto:${MY_EMAIL}`}
-												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white"
+												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white desktophover:hover:text-white"
 											>
 												<MdOutlineMail size={50} />
 												<address className="not-italic ">
@@ -86,7 +90,7 @@ export function InfoSection({ scrollRef }) {
 												target="_blank"
 												rel="noopener noreferrer"
 												href={LINKEDIN_PROFILE}
-												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white"
+												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white desktophover:hover:text-white"
 											>
 												<RiLinkedinBoxLine size={50} />
 												<p>Linkedin profile</p>
@@ -98,7 +102,7 @@ export function InfoSection({ scrollRef }) {
 												target="_blank"
 												rel="noopener noreferrer"
 												href={GITHUB_PROFILE}
-												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white"
+												className="flex sm:flex-row flex-col gap-2 items-center border-l-4 pl-1 border-transparent desktophover:hover:border-white desktophover:hover:text-white"
 											>
 												<FiGithub size={50} />
 												<p>GitHub moromichele</p>

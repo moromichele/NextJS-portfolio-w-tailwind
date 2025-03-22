@@ -27,7 +27,7 @@ export function Header({ refs: [ref1, ref2, ref3] }) {
 					scaleX: scroll1.scrollYProgress,
 					backgroundColor: experienceStation.getColorByTheme(isDarkMode),
 				}}
-				className="fixed top-[20px] left-[2%] h-[20px] w-1/4 origin-[0%] z-[5]"
+				className="fixed top-[20px] left-[2%] h-[20px] w-1/4 origin-[0%] z-[5] rounded-l"
 			/>
 			<motion.div
 				style={{
@@ -100,9 +100,9 @@ export function Header({ refs: [ref1, ref2, ref3] }) {
 					{aboutStation.title[0].toUpperCase()}
 				</p>
 			</Link>
-			<div className="fixed bg-slate-900 dark:bg-slate-200 h-[16px] xl:w-[96%] md:w-[94%] w-[90%] top-[22px] left-[2%] z-[3]" />
+			<div className="fixed bg-slate-900 dark:bg-slate-200 h-[16px] xl:w-[96%] md:w-[94%] w-[90%] top-[22px] left-[2%] z-[3] rounded" />
 			<button
-				className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[3px_3px_0px_0px_black] desktophover:hover:scale-105 z-[4]"
+				className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 rounded-xl border-black dark:border-white border-2 shadow-[2px_2px_0px_0px_black] dark:shadow-[3px_3px_0px_0px_black] desktophover:hover:scale-105 z-[4]"
 				onClick={() => {
 					setIsDarkMode((s) => !s)
 				}}

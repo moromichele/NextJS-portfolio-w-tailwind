@@ -45,7 +45,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 	)
 }
 
-export function StationNavigator({ isDark, upArr, downArr }) {
+export function StationsDirectionSign({ isDark, upArr, downArr }) {
 	return (
 		<div className="border-slate-900 dark:border-black border-x-[7px] border-y-[1px]  flex lg:gap-2 gap-1 md:justify-start justify-around items-center align-center bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white shadow-[inset_0_0_7px_0px_gray] dark:shadow-[inset_0_0_7px_1px_black]">
 			{mapArrToSign(upArr, AiOutlineArrowUp, isDark)}

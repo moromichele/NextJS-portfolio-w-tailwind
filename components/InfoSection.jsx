@@ -28,6 +28,7 @@ export function InfoSection({ scrollRef }) {
 								src="/profile_pic.webp"
 								alt="picture of me"
 								className="object-cover lg:object-scale-cover scale-125 translate-y-[10px]"
+								sizes="170px"
 								fill
 							/>
 						</div>

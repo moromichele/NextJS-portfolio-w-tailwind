@@ -13,6 +13,7 @@ export function ProjectCard({
 					src={imgSrc}
 					alt="project preview"
 					className="object-scale-down lg:object-scale-cover"
+					sizes="(max-width: 1020px) 50vw, 25vw"
 					fill
 				/>
 			</div>

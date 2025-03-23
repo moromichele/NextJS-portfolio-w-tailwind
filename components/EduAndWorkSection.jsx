@@ -61,20 +61,20 @@ export function EduAndWorkSection({ scrollRef }) {
 					<section>
 						<MdWork
 							size={150}
-							className="fill-stone-700 dark:fill-stone-300 mt-5 md:mr-0 md:ml-auto"
+							className="fill-stone-700 dark:fill-stone-300 mt-5 mr-0 ml-auto"
 						/>
-						<div className="w-[80%] md:ml-auto mb-[30px]">
-							<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 md:-mr-5 md:md-0 md:ml-0 -ml-5" />
+						<div className="w-[80%] ml-auto mb-[30px]">
+							<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 -mr-5 md-0 ml-0 -ml-5" />
 							<div
 								style={{
 									backgroundColor:
 										experienceStation.getColorByTheme(isDarkMode),
 								}}
-								className="w-[calc(100% + 5px)] h-[30px]  md:-mr-5 -ml-5 md:ml-auto"
+								className="w-[calc(100% + 5px)] h-[30px]  -mr-5 -ml-5 ml-auto"
 							/>
 
 							<a
-								className="w-full mt-5 md:mr-auto block"
+								className="w-full mt-5 mr-auto block"
 								href="https://www.emplifi.io/"
 								target="_blank"
 								rel="noreferrer"
@@ -97,34 +97,34 @@ export function EduAndWorkSection({ scrollRef }) {
 									</div>
 								</div>
 								<div className="w-fill h-[3px] bg-stone-700 dark:bg-stone-300" />
-								<div className="w-fill sm:text-[47px] text-[40px] md:text-left text-right">
+								<div className="w-fill sm:text-[47px] text-[40px]">
 									Full stack Developer
 								</div>
 							</a>
-							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right [&>span]:font-semibold">
+							<p className="text-2xl mt-5 font-thin pr-[5%] [&>span]:font-semibold">
 								Utilized <span>TypeScript + React</span> on fronted and{" "}
 								<span>Node</span> on backend to help maintain and develop new
 								features on a large, enterprise level social media management
 								platform
 							</p>
-							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right [&>span]:font-semibold">
+							<p className="text-2xl mt-5 font-thin pr-[5%] [&>span]:font-semibold">
 								Worked as part of a small <span>agile team</span>, in direct
 								contact with project managers, product, designers and other teams in case
 								of company wide initiatives
 							</p>
 						</div>
-						<div className="w-[80%] md:ml-auto">
-							<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 md:-mr-5 md:md-0 md:ml-0 -ml-5" />
+						<div className="w-[80%] ml-auto">
+							<div className="w-[calc(100% + 5px)] h-[10px] bg-stone-700 dark:bg-stone-300 -mr-5 md-0 ml-0 -ml-5" />
 							<div
 								style={{
 									backgroundColor:
 										experienceStation.getColorByTheme(isDarkMode),
 								}}
-								className="w-[calc(100% + 5px)] h-[30px]  md:-mr-5 -ml-5 md:ml-auto"
+								className="w-[calc(100% + 5px)] h-[30px]  -mr-5 -ml-5 ml-auto"
 							/>
 
 							<a
-								className="w-full mt-5 md:mr-auto block"
+								className="w-full mt-5 mr-auto block"
 								href="https://www.ftonweb.com/"
 								target="_blank"
 								rel="noreferrer"
@@ -149,15 +149,15 @@ export function EduAndWorkSection({ scrollRef }) {
 									</div>
 								</div>
 								<div className="w-fill h-[3px] bg-stone-700 dark:bg-stone-300" />
-								<div className="w-fill sm:text-[47px] text-[40px] md:text-left text-right">
+								<div className="w-fill sm:text-[47px] text-[40px]">
 									Full stack Developer
 								</div>
 							</a>
-							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
+							<p className="text-2xl mt-5 font-thin pr-[5%]">
 								Developed a RESTful web app for a client using React with Chakra
 								UI, Spring Boot and PostgreSQL
 							</p>
-							<p className="text-2xl mt-5 font-thin md:pr-[5%] md:pl-0 pl-[5%] md:text-left text-right">
+							<p className="text-2xl mt-5 font-thin pr-[5%]">
 								Maintained and completely restyled the company&apos;s main
 								legacy web app <br />
 								(GWT, XML, CSS)

@@ -102,15 +102,14 @@ export function EduAndWorkSection({ scrollRef }) {
 								</div>
 							</a>
 							<p className="text-2xl mt-5 font-thin pr-[5%] [&>span]:font-semibold">
-								Utilized <span>TypeScript + React</span> on fronted and{" "}
+								Utilized <span>TypeScript + React</span> on frontend and{" "}
 								<span>Node</span> on backend to help maintain and develop new
-								features on a large, enterprise level social media management
+								features on a large enterprise-level social media management
 								platform
 							</p>
 							<p className="text-2xl mt-5 font-thin pr-[5%] [&>span]:font-semibold">
-								Worked as part of a small <span>agile team</span>, in direct
-								contact with project managers, product, designers and other teams in case
-								of company wide initiatives
+								Worked as part of a small <span>Agile</span> team, following the <span>Scrum</span> methodology, directly collaborating with project managers, product owners, designers and other teams in case
+								of company-wide initiatives
 							</p>
 						</div>
 						<div className="w-[80%] ml-auto">

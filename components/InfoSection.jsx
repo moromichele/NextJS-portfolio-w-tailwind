@@ -41,14 +41,13 @@ export function InfoSection({ scrollRef }) {
 							
 							<br />
 							<br />
-							After a short work experience in Italy, I&apos;ve decided to move abroad and I&apos;ve been working as a Full Stack developer in the beautiful city of Prague, Czech Republic, since 2023.
+							After graduating and a nine months work experience in Italy, I decided to move abroad and I&apos;ve been working as a Full Stack developer in the beautiful city of Prague, Czech Republic, since 2023.
 							<br />
 							<br />
 							<strong>Outside programming</strong>, I have a big passion for
 							cars, especially classic race cars. I grew up dreaming about
 							becoming a car designer, now I do car photography as a hobby.
-							<br />I also like to skateboard and to play basketball, even
-							though Tuscany is not the best place for both of these things.
+							<br />I also like to skateboard, playing basketball and I study Japanese in my free time.
 							<br />
 							<br />
 						</p>

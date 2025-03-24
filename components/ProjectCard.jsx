@@ -12,7 +12,7 @@ export function ProjectCard({
 				<Image
 					src={imgSrc}
 					alt="project preview"
-					className="object-scale-down lg:object-scale-cover"
+					className="object-contain"
 					sizes="(max-width: 1020px) 50vw, 25vw"
 					fill
 				/>

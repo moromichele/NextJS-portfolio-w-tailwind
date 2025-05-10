@@ -32,7 +32,7 @@ export function InfoSection({ scrollRef }) {
 								fill
 							/>
 						</div>
-						<p className="font-istok text-1xl text-right">
+						<p className="text-1xl text-right">
 							<strong>Hi I&apos;m Michele Moro</strong>, I grew up in a small
 							town in the italian region of Tuscany, the one with the good
 							looking hills and cypress trees. I&apos;ve always been interested
@@ -59,7 +59,7 @@ export function InfoSection({ scrollRef }) {
 						}}
 						className="top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 absolute w-[80%] md:h-[70%] h-[90%] rounded shadow-lg"
 					>
-						<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
+						<div className="grid md:grid-cols-2 gap-4 grid-cols-1 md:grid-rows-[1fr] grid-rows-[1fr_1fr] h-full">
 							<div>
 								The cake is a lie. Fun fact: the town I grew up in has a
 								population of around 40 people and no shops of any kind.

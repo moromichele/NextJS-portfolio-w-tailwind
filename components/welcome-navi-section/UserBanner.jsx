@@ -13,7 +13,7 @@ export function UserBanner() {
 			<div
 				className={`${
 					isDarkMode && "animate-softlights"
-				} dark:[text-shadow:0px_0px_2px_white] font-istok leading-none`}
+				} dark:[text-shadow:0px_0px_1px_white] leading-none`}
 			>
 				<h1 className="lg:text-4xl xsm:text-2xl text-2xl">Michele Moro</h1>
 				<h1 className="lg:text-4xl sm:text-2xl text-1xl">ミケレ・モロ</h1>

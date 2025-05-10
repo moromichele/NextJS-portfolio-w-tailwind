@@ -6,7 +6,7 @@ import { LINKEDIN_PROFILE, MY_EMAIL, GITHUB_PROFILE } from "../constants"
 
 export function Footer() {
 	return (
-		<footer className="mt-20 font-istok min-h-[100px] bg-zinc-300 dark:bg-zinc-800 w-full text-zinc-900 dark:text-zinc-200 p-5 grid sm:grid-rows-2 sm:grid-cols-2 grid-rows-4 grid-cols-1 items-center text-center">
+		<footer className="mt-20 min-h-[100px] bg-zinc-300 dark:bg-zinc-800 w-full text-zinc-900 dark:text-zinc-200 p-5 grid sm:grid-rows-2 sm:grid-cols-2 grid-rows-4 grid-cols-1 items-center text-center">
 			<p>&copy; 2025, Michele Moro</p>
 			<p>
 				Created with{" "}

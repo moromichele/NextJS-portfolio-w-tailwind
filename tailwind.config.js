@@ -5,9 +5,6 @@ module.exports = {
 	content: ["./pages/**/*.js", "./components/**/*.jsx"],
 	theme: {
 		extend: {
-			fontFamily: {
-				istok: ["Istok Web", "sans-serif"],
-			},
 			animation: {
 				lights: "lights 2.5s",
 				softlights: "softlights 2.2s",

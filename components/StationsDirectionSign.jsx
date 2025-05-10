@@ -22,7 +22,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 						<div className="dark:bg-white rounded-lg flex items-center justify-center text-center p-1">
 							<div
 								style={{ borderColor: station.getColorByTheme(isDark) }}
-								className="text-slate-900 h-[38px] w-[38px] leading-[38px] rounded-full sm:text-[30px] text-[28px] font-bold dark:bg-white sm:border-[12px] border-[10px] box-content"
+								className="text-slate-900 h-[38px] w-[38px] leading-[41px] rounded-full sm:text-[30px] text-[28px] font-bold dark:bg-white sm:border-[12px] border-[10px] box-content"
 							>
 								{station.title[0].toUpperCase()}
 							</div>
@@ -30,7 +30,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 						<div className="overflow-hidden whitespace-nowrap text-[35px]">
 							{station.title.length > 12 ? (
 								<p className="md:animate-none animate-scrollText md:p-left[0%] p-left-[100%] sm:block hidden max-h-[100px] md:max-w-none max-w-[300px]">
-									<strong>{station.title}</strong>
+									{station.title}
 								</p>
 							) : (
 								<p className="sm:block hidden max-h-[100px]">

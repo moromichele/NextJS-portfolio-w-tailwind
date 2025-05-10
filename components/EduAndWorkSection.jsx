@@ -17,7 +17,7 @@ export function EduAndWorkSection({ scrollRef }) {
 					title={experienceStation.title}
 					color={experienceStation.getColorByTheme(isDarkMode)}
 				/>
-				<div className="font-istok grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh] p-5">
+				<div className="grid md:grid-cols-2 gap-4 grid-cols-1 max-w-fll md:min-h-[80vh] min-h-[100vh] p-5">
 					<section>
 						<MdSchool
 							size={150}

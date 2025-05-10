@@ -1,6 +1,6 @@
 import { Link } from "react-scroll"
 import { AiOutlineArrowRight } from "react-icons/ai"
-import React, { useRef } from "react"
+import { useRef } from "react"
 
 export function WelcomeNavButton ({color, title, to}) {
 	const inputRef = useRef(null)
@@ -29,12 +29,12 @@ export function WelcomeNavButton ({color, title, to}) {
 							<div className="border-2 border-white rounded-full">
 								<div
 									style={{ borderColor: "unset", color: color }}
-									className="h-[35px] w-[35px] leading-[35px] rounded-full text-[30px] font-bold bg-white border-[12px] box-content"
+									className="h-[35px] w-[35px] rounded-full text-[30px] font-bold bg-white border-[12px] box-content"
 								>
 									{title[0].toUpperCase()}
 								</div>
 							</div>
-							<p className="font-istok sm:text-2xl xsm:text-[22px] text-base">
+							<p className="sm:text-2xl xsm:text-[22px] text-right">
 								{title}
 							</p>
 						</div>

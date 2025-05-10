@@ -26,7 +26,7 @@ export function WelcomeNaviSection() {
 						</ul>
 					</nav>
 				</div>
-				<div className="font-istok dark:animate-lights  flex items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-6xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
+				<div className="dark:animate-lights  flex items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-7xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
 					ようこそ
 					<br />
 					Benvenuti

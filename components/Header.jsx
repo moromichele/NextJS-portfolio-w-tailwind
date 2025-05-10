@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import { CgDarkMode } from "react-icons/cg"
 import { Link } from "react-scroll"
-import React from "react"
 import { experienceStation, projectStation, aboutStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 
@@ -45,7 +44,7 @@ export function Header({ scrolls: [scroll1, scroll2, scroll3] }) {
 					style={{
 						borderColor: experienceStation.getColorByTheme(isDarkMode),
 					}}
-					className="desktophover:hover:scale-110 fixed sm:left-[26.5%] left-[25.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] text-center box-content text-black z-[6]"
+					className="desktophover:hover:scale-110 fixed sm:left-[26.5%] left-[25.5%] top-[17px] h-[18px] w-[18px] leading-[19px] rounded-full text-[18px] font-bold bg-white border-[5px] text-center box-content text-black z-[6]"
 				>
 					{experienceStation.title[0].toUpperCase()}
 				</p>
@@ -64,7 +63,7 @@ export function Header({ scrolls: [scroll1, scroll2, scroll3] }) {
 					style={{
 						borderColor: projectStation.getColorByTheme(isDarkMode),
 					}}
-					className="desktophover:hover:scale-110 fixed sm:left-[51.5%] left-[50.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
+					className="desktophover:hover:scale-110 fixed sm:left-[51.5%] left-[50.5%] top-[17px] h-[18px] w-[18px] leading-[19px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 				>
 					{projectStation.title[0].toUpperCase()}
 				</p>
@@ -83,7 +82,7 @@ export function Header({ scrolls: [scroll1, scroll2, scroll3] }) {
 					style={{
 						borderColor: aboutStation.getColorByTheme(isDarkMode),
 					}}
-					className="desktophover:hover:scale-110 fixed sm:left-[76.5%] left-[75.5%] top-[17px] h-[18px] w-[18px] leading-[18px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
+					className="desktophover:hover:scale-110 fixed sm:left-[76.5%] left-[75.5%] top-[17px] h-[18px] w-[18px] leading-[19px] rounded-full text-[18px] font-bold bg-white border-[5px] border-black text-center box-content text-black z-[6]"
 				>
 					{aboutStation.title[0].toUpperCase()}
 				</p>

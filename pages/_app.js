@@ -1,6 +1,7 @@
 import "../styles/globals.css"
 import { ThemeProvider } from "/context/ThemeContext"
 import { Istok_Web } from "next/font/google"
+import { Analytics } from '@vercel/analytics/next';
 
 const istok = Istok_Web({
 	subsets: ["latin"],
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
 		<div className={istok.className}>
 			<ThemeProvider>
 				<Component {...pageProps} />
+				<Analytics />
 			</ThemeProvider>
 		</div>
 	)

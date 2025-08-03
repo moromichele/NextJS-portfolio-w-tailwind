@@ -15,8 +15,10 @@ export function UserBanner() {
 					isDarkMode && "animate-softlights"
 				} dark:[text-shadow:0px_0px_1px_white] leading-none`}
 			>
-				<h1 className="lg:text-4xl xsm:text-2xl text-2xl">Michele Moro</h1>
-				<h1 className="lg:text-4xl sm:text-2xl text-1xl">ミケレ・モロ</h1>
+				<div className="flex flex-col sm:flex-row gap-0 sm:gap-[20px]">
+					<h1 className="lg:text-3xl xsm:text-2xl text-2xl" style={{wordBreak:'keep-all'}}>Michele Moro</h1>
+					<h1 className="lg:text-3xl xsm:text-2xl text-2xl" style={{wordBreak:'keep-all'}}>ミケレ・モロ</h1>
+				</div>
 				<h2 className="lg:text-2xl sm:text-base text-base">
 					Full stack developer
 				</h2>

@@ -9,7 +9,7 @@ export function WelcomeNavButton ({color, title, to}) {
 		<li>
 			<div
 				style={{ backgroundColor: color }}
-				className="w-full h-full transition-transform cursor-pointer text-center text-neutral-100 dark:text-white text-4xl p-2 desktophover:hover:scale-105 desktophover:hover:shadow-[3px_3px_0px_0px_black] dark:desktophover:hover:shadow-[3px_3px_0px_0px_black_,_inset_0_0_3px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
+				className="w-full h-full transition-transform cursor-pointer text-center text-neutral-100 dark:text-white p-2 desktophover:hover:scale-105 desktophover:hover:shadow-[3px_3px_0px_0px_black] dark:desktophover:hover:shadow-[3px_3px_0px_0px_black_,_inset_0_0_3px_0px_black] dark:shadow-[inset_0_0_3px_0px_black]"
 			>
 				<Link
 					activeClass="active"
@@ -29,7 +29,7 @@ export function WelcomeNavButton ({color, title, to}) {
 							<div className="border-2 border-white rounded-full">
 								<div
 									style={{ borderColor: "unset", color: color }}
-									className="h-[35px] w-[35px] rounded-full text-[30px] font-bold bg-white border-[12px] box-content"
+									className="h-[35px] w-[35px] rounded-full text-[27px] font-bold bg-white border-[12px] box-content"
 								>
 									{title[0].toUpperCase()}
 								</div>

@@ -26,15 +26,11 @@ export function WelcomeNaviSection() {
 						</ul>
 					</nav>
 				</div>
-				<div className="dark:animate-lights  flex items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-7xl text-white leading-tight dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black]">
-					ようこそ
-					<br />
-					Benvenuti
-					<br />
-					Welcome
-					<br />
-					Vítejte
-					<br />
+				<div className="dark:animate-lights  flex flex-col items-center justify-center text-center xl:text-9xl lg:text-8xl md:text-7xl sm:text-8xl text-7xl text-white dark:[text-shadow:0px_0px_5px_white] bg-red-500 dark:bg-red-700 dark:shadow-[inset_0_0_15px_0px_black] gap-2 py-[60px]">
+					<div>ようこそ</div>
+					<div>Benvenuti</div>
+					<div>Welcome</div>
+					<div>Vítejte</div>
 				</div>
 			</div>
 		</div>

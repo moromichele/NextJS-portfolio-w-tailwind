@@ -70,7 +70,7 @@ export function EduAndWorkSection({ scrollRef }) {
 							className="fill-stone-700 dark:fill-stone-300 mt-5"
 						/>
 						{WORK_EXPERIENCES.map((workExp) => (
-							<WorkExperience {...workExp} />
+							<WorkExperience key={workExp.company+"%"+workExp.date} {...workExp} />
 						))}
 					</section>
 					<section>

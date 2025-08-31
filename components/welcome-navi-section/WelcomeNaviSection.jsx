@@ -15,12 +15,12 @@ export function WelcomeNaviSection() {
 					<UserBanner isDarkMode={isDarkMode} />
 					<nav className="md:h-5/6 h-[85%]">
 						<ul className="grid grid-cols-3 h-full">
-							{stationsArray.map((s, i) => (
+							{stationsArray.map((s) => (
 								<WelcomeNavButton
 									title={s.title}
 									color={s.getColorByTheme(isDarkMode)}
 									to={s.to}
-									key={i}
+									key={s.to}
 								/>
 							))}
 						</ul>

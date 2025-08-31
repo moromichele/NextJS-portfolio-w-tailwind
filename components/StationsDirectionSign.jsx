@@ -7,7 +7,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 	return (
 		<div className="lg:p-2 md:p-1 p-2 flex gap-1 items-center align-center overflow-hidden">
 			<ArrowIcon className="h-[100%] lg:min-w-[80px] md:min-w-[50px] min-w-[80px] text-[50px]" />
-			{stationsArray.map((station, i) => {
+			{stationsArray.map((station) => {
 				return (
 					<Link
 						activeClass="active"
@@ -17,7 +17,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 						offset={0}
 						duration={500}
 						className="cursor-pointer flex gap-1 items-center align-center"
-						key={i}
+						key={station.to}
 					>
 						<div className="dark:bg-white rounded-lg flex items-center justify-center text-center p-1">
 							<div

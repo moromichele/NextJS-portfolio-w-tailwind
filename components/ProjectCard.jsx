@@ -67,10 +67,10 @@ export function ProjectCard({
 			</div>
 			{tags && tags.length > 0 && (
 				<div className="px-6 pt-4 pb-2">
-					{tags.map((tag, index) => {
+					{tags.map((tag) => {
 						return (
 							<span
-								key={index}
+								key={tag}
 								className="inline-block bg-slate-300 dark:bg-neutral-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-green-100 mr-2 mb-2"
 							>
 								#{tag}

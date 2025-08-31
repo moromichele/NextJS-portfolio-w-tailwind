@@ -20,9 +20,9 @@ export function ProjectsSection({ scrollRef }) {
 				/>
 				<div className="p-4">
 					<div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
-						{projectsArray.map((project, i) => (
+						{projectsArray.map((project) => (
 							<ProjectCard
-								key={i}
+								key={project.name}
 								projectObj={project}
 								imgSrc={
 									isDarkMode && project.darkImgSrc

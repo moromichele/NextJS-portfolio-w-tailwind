@@ -52,9 +52,9 @@ export function WorkExperience({
 				<div className="w-full w-fill sm:text-[47px] text-[40px] text-right">
 					{title}
 				</div>
-				{descriptionParagraphs.map((p) => {
+				{descriptionParagraphs.map((p,i) => {
 					return (
-						<p className="text-2xl mt-5 font-thin [&>span]:font-semibold text-right">
+						<p key={i} className="text-2xl mt-5 font-thin [&>span]:font-semibold text-right">
 							{p}
 						</p>
 					)

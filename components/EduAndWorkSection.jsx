@@ -97,7 +97,7 @@ export function EduAndWorkSection({ scrollRef }) {
 							>
 								<div className="flex justify-between mb-2">
 									<div className="flex flex-col justify-between">
-										<div className="text-2xl font-bold">Bachelor's degree</div>
+										<div className="text-2xl font-bold">Bachelor&apos;s degree</div>
 										<div className="text-xl">Università di Siena</div>
 									</div>
 									<div>

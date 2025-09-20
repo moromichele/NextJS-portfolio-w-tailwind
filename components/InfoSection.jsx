@@ -14,7 +14,7 @@ export function InfoSection({ scrollRef }) {
 		<div
 			ref={scrollRef}
 			id={aboutStation.to}
-			className="rounded-b-xl xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700 "
+			className="xl:rounded-b-xl xl:w-[1280px] m-[0_auto] bg-slate-50 dark:bg-slate-700 "
 		>
 			<div className="rounded-b-xl">
 				<StationHeader

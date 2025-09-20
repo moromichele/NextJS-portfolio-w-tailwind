@@ -19,7 +19,7 @@ export function ProjectsSection({ scrollRef }) {
 					color={projectStation.getColorByTheme(isDarkMode)}
 				/>
 				<div className="p-4">
-					<div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
 						{projectsArray.map((project) => (
 							<ProjectCard
 								key={project.name}

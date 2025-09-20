@@ -51,10 +51,7 @@ const projectPortfolio = {
 	tags: ["NextJS", "Framer-Motion", "TailwindCSS"],
 }
 
-export const projectsArray = [
-	projectF1StandingsV2,
-	projectPortfolio,
-]
+export const projectsArray = [projectF1StandingsV2, projectPortfolio]
 
 export const MY_EMAIL = "moro.michele1997@gmail.com"
 export const LINKEDIN_PROFILE =

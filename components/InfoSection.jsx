@@ -38,7 +38,7 @@ export function InfoSection({ scrollRef }) {
 							looking hills and cypress trees. I&apos;ve always been interested
 							in technology, at 14 years old I built my first computer and
 							started learning to program in C++ from youtube tutorials.
-							
+
 							<br />
 							<br />
 							After graduating and a nine months work experience in Italy, I decided to move abroad and I&apos;ve been working as a Full Stack developer in the beautiful city of Prague, Czech Republic, since 2023.

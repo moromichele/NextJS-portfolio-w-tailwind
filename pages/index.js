@@ -1,5 +1,5 @@
 import Head from "next/head"
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
 import { EduAndWorkSection } from "../components/EduAndWorkSection"

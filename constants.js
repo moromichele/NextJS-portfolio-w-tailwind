@@ -25,8 +25,9 @@ const projectF1StandingsV2 = {
 	name: "F1 Standings - V2",
 	liveSite: "https://moromichele.github.io/Formula-1-2/",
 	gitHub: "https://github.com/moromichele/Formula-1-2/",
-	desc: "Historical F1 standings data, with a better stack",
-	imgSrc: "/formula-1-2-screen.webp",
+	desc: "Historical F1 standings data, (\"A list, rendered from an API\")",
+	imgSrc: "/formula-1-2-l.webp",
+	darkImgSrc: "/formula-1-2-d.webp",
 	tags: [
 		"TypeScript",
 		"React",
@@ -34,9 +35,9 @@ const projectF1StandingsV2 = {
 		"API",
 		"Axios",
 		"CSS Modules",
+		"Vite",
 		"2025",
 	],
-	noDark: true,
 }
 
 const projectPortfolio = {

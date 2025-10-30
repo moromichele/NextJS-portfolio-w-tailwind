@@ -13,25 +13,23 @@ export function ProjectsSection({ scrollRef }) {
 			ref={scrollRef}
 			className="xl:w-[1280px] m-[0_auto] bg-neutral-50 dark:bg-neutral-700"
 		>
-			<div className="min-h-[90vh]">
-				<StationHeader
-					title={projectStation.title}
-					color={projectStation.getColorByTheme(isDarkMode)}
-				/>
-				<div className="p-4">
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
-						{projectsArray.map((project) => (
-							<ProjectCard
-								key={project.name}
-								projectObj={project}
-								imgSrc={
-									isDarkMode && project.darkImgSrc
-										? project.darkImgSrc
-										: project.imgSrc
-								}
-							/>
-						))}
-					</div>
+			<StationHeader
+				title={projectStation.title}
+				color={projectStation.getColorByTheme(isDarkMode)}
+			/>
+			<div className="p-4">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-stretch justify-items-stretch">
+					{projectsArray.map((project) => (
+						<ProjectCard
+							key={project.name}
+							projectObj={project}
+							imgSrc={
+								isDarkMode && project.darkImgSrc
+									? project.darkImgSrc
+									: project.imgSrc
+							}
+						/>
+					))}
 				</div>
 			</div>
 		</div>

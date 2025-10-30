@@ -1,8 +1,9 @@
 import { Link } from "react-scroll"
 import { AiOutlineArrowRight } from "react-icons/ai"
 import { useRef } from "react"
+import { HEADER_HEIGHT_PX } from "../../constants"
 
-export function WelcomeNavButton ({color, title, to}) {
+export function WelcomeNavButton ({color, title, scrollId}) {
 	const inputRef = useRef(null)
 
 	return (
@@ -13,10 +14,9 @@ export function WelcomeNavButton ({color, title, to}) {
 			>
 				<Link
 					activeClass="active"
-					to={to}
-					offset={0}
+					to={scrollId}
 					duration={500}
-					delay={1}
+					offset={-HEADER_HEIGHT_PX}
 					aria-label={`Go to ${title}`}
 					ref={inputRef}
 					spy

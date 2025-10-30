@@ -19,8 +19,8 @@ export function WelcomeNaviSection() {
 								<WelcomeNavButton
 									title={s.title}
 									color={s.getColorByTheme(isDarkMode)}
-									to={s.to}
-									key={s.to}
+									scrollId={s.scrollID}
+									key={s.scrollID}
 								/>
 							))}
 						</ul>

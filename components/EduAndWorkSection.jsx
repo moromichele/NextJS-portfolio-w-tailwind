@@ -11,8 +11,8 @@ export function EduAndWorkSection({ scrollRef }) {
 	return (
 		<div
 			ref={scrollRef}
-			id="edu_exp"
-			className="border-red-900 border-t-[100px] -mt-[100px] xl:w-[1280px] m-[0_auto] text-stone-700 dark:text-stone-300 bg-stone-200 dark:bg-stone-900"
+			id={experienceStation.scrollID}
+			className="border-red-900 xl:w-[1280px] m-[0_auto] text-stone-700 dark:text-stone-300 bg-stone-200 dark:bg-stone-900"
 		>
 			<div className="min-h-[90vh]">
 				<StationHeader

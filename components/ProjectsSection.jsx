@@ -9,7 +9,7 @@ export function ProjectsSection({ scrollRef }) {
 
 	return (
 		<div
-			id={projectStation.to}
+			id={projectStation.scrollID}
 			ref={scrollRef}
 			className="xl:w-[1280px] m-[0_auto] bg-neutral-50 dark:bg-neutral-700"
 		>

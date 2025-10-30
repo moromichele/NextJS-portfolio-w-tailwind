@@ -1,7 +1,8 @@
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai"
 import { Link } from "react-scroll"
+import { HEADER_HEIGHT_PX } from "../constants"
 
-function mapArrToSign (stationsArray, ArrowIcon, isDark) {
+function mapArrToSign(stationsArray, ArrowIcon, isDark) {
 	if (!stationsArray || stationsArray.length === 0) return null
 
 	return (
@@ -11,13 +12,13 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 				return (
 					<Link
 						activeClass="active"
-						to={station.to}
+						to={station.scrollID}
 						spy={true}
 						smooth={true}
-						offset={0}
+						offset={-HEADER_HEIGHT_PX}
 						duration={500}
 						className="cursor-pointer flex gap-1 items-center align-center"
-						key={station.to}
+						key={station.scrollID}
 					>
 						<div className="dark:bg-white rounded-lg flex items-center justify-center text-center p-1">
 							<div
@@ -33,9 +34,7 @@ function mapArrToSign (stationsArray, ArrowIcon, isDark) {
 									{station.title}
 								</p>
 							) : (
-								<p className="sm:block hidden max-h-[100px]">
-									{station.title}
-								</p>
+								<p className="sm:block hidden max-h-[100px]">{station.title}</p>
 							)}
 						</div>
 					</Link>

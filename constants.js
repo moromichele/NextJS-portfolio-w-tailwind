@@ -4,21 +4,21 @@ export const experienceStation = {
 	getColorByTheme: (isDarkMode) =>
 		isDarkMode ? colors.yellow[600] : colors.yellow[500],
 	title: "Education and work experience",
-	to: "edu_exp",
+	scrollID: "EXP_STATION",
 }
 
 export const projectStation = {
 	getColorByTheme: (isDarkMode) =>
 		isDarkMode ? colors.green[600] : colors.green[500],
 	title: "Projects",
-	to: "projects",
+	scrollID: "PRJ_STATION",
 }
 
 export const aboutStation = {
 	getColorByTheme: (isDarkMode) =>
 		isDarkMode ? colors.indigo[600] : colors.indigo[500],
 	title: "Informations",
-	to: "about",
+	scrollID: "INF_STATION",
 }
 
 const projectF1StandingsV2 = {
@@ -103,3 +103,5 @@ export const WORK_EXPERIENCES = [
 		],
 	},
 ]
+
+export const HEADER_HEIGHT_PX = 60

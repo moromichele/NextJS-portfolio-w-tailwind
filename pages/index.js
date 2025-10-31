@@ -63,7 +63,7 @@ export default function Home() {
 					/>
 					<main className="rounded-b-xl max-w-full text-slate-900 dark:text-slate-100  transition-colors duration-500 shadow-[0px_0px_10px_0px_#94a3b8] dark:shadow-sm">
 						<WelcomeNaviSection />
-						<EduAndWorkSection scrollRefs={firstStationRef} />
+						<EduAndWorkSection scrollRef={firstStationRef} />
 						<StationsDirectionSign downArr={[aboutStation]} />
 						<ProjectsSection scrollRef={secondStationRef} />
 						<StationsDirectionSign upArr={[experienceStation]} />

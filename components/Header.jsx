@@ -5,7 +5,14 @@ import { experienceStation, projectStation, aboutStation } from "../constants"
 import { useTheme } from "../context/ThemeContext"
 import { HEADER_HEIGHT_PX } from "../constants"
 
-export function Header({ station1ScrollProgress, station2ScrollProgress, station3ScrollProgress }) {
+export function Header({
+	station1ScrollProgress,
+	station2ScrollProgress,
+	station3ScrollProgress,
+	station1EndScrollProgress,
+	station2EndScrollProgress,
+	station3EndScrollProgress,
+}) {
 	const { isDarkMode, setIsDarkMode } = useTheme()
 
 	return (
@@ -108,6 +115,30 @@ export function Header({ station1ScrollProgress, station2ScrollProgress, station
 					<motion.div
 						style={{
 							scaleX: station3ScrollProgress,
+							backgroundColor: aboutStation.getColorByTheme(isDarkMode),
+						}}
+						className="h-[18px] w-full origin-[0%] m-auto"
+					/>
+					<div className="w-full" />
+				</div>
+				<div className="absolute top-0 left-0 row-1 col-1 flex w-full h-full z-[3]">
+					<motion.div
+						style={{
+							scaleX: station1EndScrollProgress,
+							backgroundColor: experienceStation.getColorByTheme(isDarkMode),
+						}}
+						className="h-[18px] w-full origin-[0%] m-auto"
+					/>
+					<motion.div
+						style={{
+							scaleX: station2EndScrollProgress,
+							backgroundColor: projectStation.getColorByTheme(isDarkMode),
+						}}
+						className="h-[18px] w-full origin-[0%] m-auto"
+					/>
+					<motion.div
+						style={{
+							scaleX: station3EndScrollProgress,
 							backgroundColor: aboutStation.getColorByTheme(isDarkMode),
 						}}
 						className="h-[18px] w-full origin-[0%] m-auto"
